@@ -1,0 +1,88 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WChallenge.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+ 
+        <!--Panorama control-->
+        <controls:Panorama Title="KickAss App">
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="PanoramaBackground.png"/>
+            </controls:Panorama.Background>
+
+
+            <controls:PanoramaItem Header="Learn Stance">
+                <!--Double line list with image placeholder and text wrapping-->
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}" Height="902">
+                     <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                <!--Replace rectangle with image-->
+                                <Image Height="100" Width="100"  Source="Assets/groin " Margin="12,0,9,0"/>
+                                <StackPanel Width="311">
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="AliceBlue" Margin="-20,10,0,0"/>
+                                    <Rectangle Fill="Red" Width="{Binding percentageDone}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"/>
+
+                                    <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PanoramaItem>
+            
+
+            <controls:PanoramaItem Header=" ">
+                <!--Double line list with text wrapping-->
+                <StackPanel>
+                    <TextBlock Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Foreground="white" Margin="0,-96,0,0"/>
+                    <TextBlock Margin="0,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes." Foreground="White"/>
+                </StackPanel>
+                    <!--<ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,17" Width="432" Height="78">
+                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>-->
+            </controls:PanoramaItem>
+
+            <controls:PanoramaItem Header="Learn Stance">
+                <ListBox>
+                    <TextBlock Text="Fight Maneuvers" FontSize="35"/>
+                    <TextBlock Text="Safety Tips" FontSize="35"/>
+                    <TextBlock Text="Fight styles" FontSize="35"/>
+                    <TextBlock Text="Abuse Feeds" FontSize="35"/>
+                    <TextBlock Text="Law and Policy" FontSize="35"/>
+                </ListBox>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar BackgroundColor="White" Opacity="0.5" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="Camera_button" IconUri="/IMAGES/appbar.feature.camera.rest.png" Text="Change Photo"/>
+            <!--<shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+            </shell:ApplicationBar.MenuItems>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

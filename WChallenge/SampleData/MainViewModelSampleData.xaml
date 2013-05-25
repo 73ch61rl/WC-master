@@ -1,0 +1,16 @@
+﻿<local:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WChallenge" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:TechnicViewModel  Description="Maecenas praesent accumsan bibendum" percentageDone="30"/>
+        <local:TechnicViewModel   Description="Dictumst eleifend facilisi faucibus" percentageDone="56"/>
+        <local:TechnicViewModel  Description="Habitant inceptos interdum lobortis" percentageDone="90"/>
+        <local:TechnicViewModel  Description="Nascetur pharetra placerat pulvinar" percentageDone="56"/>
+        <local:TechnicViewModel   Description="Sagittis senectus sociosqu suscipit" percentageDone="56"/>
+        <local:TechnicViewModel   Description="Torquent ultrices vehicula volutpat" percentageDone="23"/>
+    </local:MainViewModel.Items>
+    
+</local:MainViewModel>
