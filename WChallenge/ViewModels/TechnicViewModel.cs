@@ -17,12 +17,8 @@ namespace WChallenge
     public class TechnicViewModel : INotifyPropertyChanged
     {
         public int Id { get; set; }
-
         private string _name;
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-        /// </summary>
-        /// <returns></returns>
+  
         public string Name
         {
             get
@@ -40,10 +36,6 @@ namespace WChallenge
         }
 
         private Uri _videoLink;
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-        /// </summary>
-        /// <returns></returns>
         public Uri VideoLink
         {
             get
@@ -61,10 +53,6 @@ namespace WChallenge
         }
 
         private Uri _imageLink;
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-        /// </summary>
-        /// <returns></returns>
         public Uri ImageLink
         {
             get
@@ -83,10 +71,6 @@ namespace WChallenge
 
 
         private int _percentageDone;
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-        /// </summary>
-        /// <returns></returns>
         public int percentageDone
         {
             get
@@ -121,23 +105,24 @@ namespace WChallenge
             }
         }
 
-        //private ObservableCollection<StepViewModel> _step;
+        private ObservableCollection<StepViewModel> _step;
 
-        //public ObservableCollection<StepViewModel> Step
-        //{
-        //    get
-        //    {
-        //        return _step;
-        //    }
-        //    set
-        //    {
-        //        if (value != _step)
-        //        {
-        //            _step = value;
-        //            NotifyPropertyChanged("Step");
-        //        }
-        //    }
-        //}
+        public ObservableCollection<StepViewModel> Step
+        {
+            get
+            {
+                return _step;
+            }
+            set
+            {
+                if (value != _step)
+                {
+                    _step = value;
+                    NotifyPropertyChanged("Step");
+                }
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String percentageDone)

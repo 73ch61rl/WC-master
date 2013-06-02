@@ -33,5 +33,13 @@ namespace WChallenge
                 App.ViewModel.LoadData();
             }
         }
+
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            TechnicViewModel item = new TechnicViewModel(); 
+            item = TechnicListBox.SelectedItem as TechnicViewModel; 
+            NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id , UriKind.Relative));
+         
+        }
     }
 }
