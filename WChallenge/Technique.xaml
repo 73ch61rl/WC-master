@@ -26,9 +26,42 @@
             <TextBlock Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
+       
+        
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <MediaElement Source="{Binding VideoLink}" AutoPlay="True"/>
+               
+                <TextBlock Text="{Binding Description}" FontSize="20"/>
+               
+                <StackPanel x:Name="step1Stack" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Done}"/>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
 
+                <StackPanel x:Name="step2Stack" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Done}"/>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel x:Name="step3Stack" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Done}"/>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel x:Name="step4Stack" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Done}"/>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel x:Name="step5Stack" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding Done}"/>
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                </StackPanel>
+
+            </StackPanel>
+            
         </Grid>
     </Grid>
 

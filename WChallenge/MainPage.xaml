@@ -27,10 +27,10 @@
 
             <controls:PanoramaItem Header="Learn Stance">
                 <!--Double line list with image placeholder and text wrapping-->
-                <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items}" Height="902">
+                <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items}" Height="auto">
                      <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                                 <!--Replace rectangle with image-->
                                 <Image Height="100" Width="100"  Source="{Binding ImageLink}" Margin="12,0,9,0"/>
                                 <StackPanel Width="311">
@@ -77,12 +77,7 @@
 
         </controls:Panorama>
     </Grid>
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar BackgroundColor="White" Opacity="0.5" IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="Camera_button" IconUri="/IMAGES/appbar.feature.camera.rest.png" Text="Change Photo"/>
-            <!--<shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
-            </shell:ApplicationBar.MenuItems>-->
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    
+ 
+    
 </phone:PhoneApplicationPage>

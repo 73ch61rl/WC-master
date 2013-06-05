@@ -16,6 +16,7 @@ namespace WChallenge
     public partial class MainPage : PhoneApplicationPage
     {
         // Constructor
+       
         public MainPage()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace WChallenge
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
-
+         
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
@@ -39,7 +40,10 @@ namespace WChallenge
             TechnicViewModel item = new TechnicViewModel(); 
             item = TechnicListBox.SelectedItem as TechnicViewModel; 
             NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id , UriKind.Relative));
-         
         }
+
+
+
+
     }
 }

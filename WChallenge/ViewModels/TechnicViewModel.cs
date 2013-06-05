@@ -105,24 +105,24 @@ namespace WChallenge
             }
         }
 
-        private ObservableCollection<StepViewModel> _step;
+        private ObservableCollection<StepViewModel> _steps;
 
-        public ObservableCollection<StepViewModel> Step
+        public ObservableCollection<StepViewModel> Steps
         {
             get
             {
-                return _step;
+                return _steps;
             }
             set
             {
-                if (value != _step)
+                if (value != _steps)
                 {
-                    _step = value;
-                    NotifyPropertyChanged("Step");
+                    _steps = value;
+                    NotifyPropertyChanged("Steps");
                 }
             }
         }
-
+         
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String percentageDone)
