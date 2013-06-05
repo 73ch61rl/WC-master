@@ -11,7 +11,8 @@ using System.IO.IsolatedStorage;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Collections.ObjectModel; 
+using System.Collections.ObjectModel;
+using Microsoft.Phone.Tasks; 
 
 
 namespace WChallenge
@@ -28,33 +29,32 @@ namespace WChallenge
         {
             InitializeComponent(); 
         }
+        
+
+        private void BtAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+            TechnicViewModel result = App.ViewModel.Items[techniqueId];
+            WebBrowserTask webBrowserTask = new WebBrowserTask();
+            //webBrowserTask.Uri = new Uri(result.VideoLink.ToString(), UriKind.Absolute);
+            webBrowserTask.URL = "vnd.youtube:" + result.VideoLink.ToString().Substring(result.VideoLink.ToString().LastIndexOf("=") + 1);
+            webBrowserTask.Show();
+
+        }
 
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            /*Dynamic parsing to find the techniq id selected and bind data via data context*/
             if (NavigationContext.QueryString.TryGetValue("TechniqueId", out _techniqueId))
             {
                 techniqueId = Convert.ToInt16(_techniqueId);
-                this.DataContext = App.ViewModel.Items[techniqueId];
-                step1Stack.DataContext = App.ViewModel.Items[techniqueId].Steps[0];
-                step2Stack.DataContext = App.ViewModel.Items[techniqueId].Steps[1];
-                step3Stack.DataContext = App.ViewModel.Items[techniqueId].Steps[2];
-
-                if (App.ViewModel.Items[techniqueId].Steps.Count() > 2)
-                {
-                    step4Stack.DataContext = App.ViewModel.Items[techniqueId].Steps[3];
-                }
-                else step4Stack.Visibility = Visibility.Collapsed;
-
-                if (App.ViewModel.Items[techniqueId].Steps.Count() > 3)
-                {
-                      step5Stack.DataContext = App.ViewModel.Items[techniqueId].Steps[4];
-                }
-                else step5Stack.Visibility = Visibility.Collapsed;
-
-          
+                this.DataContext = App.ViewModel.Items[techniqueId]; 
+                StepsList.ItemsSource = App.ViewModel.Items[techniqueId].Steps; 
             }
 
+
+            /*Reads user's previous checkbox manipulation and databinds it */
             //try
             //{
             //    using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
@@ -84,6 +84,7 @@ namespace WChallenge
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            /*Saves users checkboxes to isolated storage */
             //XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
             //xmlWriterSettings.Indent = true;
             //using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
@@ -105,6 +106,7 @@ namespace WChallenge
             //}
         }
 
+         
     }
 
 
