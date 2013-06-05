@@ -18,7 +18,7 @@ namespace WChallenge
     {
         public int Id { get; set; }
         private string _name;
-  
+
         public string Name
         {
             get
@@ -69,6 +69,22 @@ namespace WChallenge
             }
         }
 
+        private Uri _thumb;
+        public Uri Thumb
+        {
+            get
+            {
+                return _thumb;
+            }
+            set
+            {
+                if (value != _thumb)
+                {
+                    _thumb = value;
+                    NotifyPropertyChanged("Thumb");
+                }
+            }
+        }
 
         private int _percentageDone;
         public int percentageDone
@@ -88,7 +104,7 @@ namespace WChallenge
         }
 
         private string _description;
-      
+
         public string Description
         {
             get
@@ -105,24 +121,24 @@ namespace WChallenge
             }
         }
 
-        private ObservableCollection<StepViewModel> _steps;
+        private ObservableCollection<StepViewModel> _step;
 
-        public ObservableCollection<StepViewModel> Steps
+        public ObservableCollection<StepViewModel> Step
         {
             get
             {
-                return _steps;
+                return _step;
             }
             set
             {
-                if (value != _steps)
+                if (value != _step)
                 {
-                    _steps = value;
-                    NotifyPropertyChanged("Steps");
+                    _step = value;
+                    NotifyPropertyChanged("Step");
                 }
             }
         }
-         
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String percentageDone)
@@ -140,7 +156,7 @@ namespace WChallenge
     public class StepViewModel : INotifyPropertyChanged
     {
         private string _description;
-        
+
         public string Description
         {
             get
@@ -157,7 +173,7 @@ namespace WChallenge
             }
         }
 
-      
+
 
         private Boolean _done;
 

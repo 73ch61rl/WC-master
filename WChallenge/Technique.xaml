@@ -17,62 +17,40 @@
     <Grid x:Name="LayoutRoot" Background="DarkRed">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Kickass app" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-        
 
-       
-        
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <!--<MediaElement Source="{Binding VideoLink}" AutoPlay="True"/>-->
-            
-                <Button Height="200" Width="Auto" Click="BtAdd_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+            <Button Height="Auto" Width="Auto" Click="BtAdd_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--<MediaElement Source="http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8s_jleJFR_M" AutoPlay="True"/>-->
 
-                <StackPanel Orientation="Horizontal" >
-                    <TextBlock Text="About: " FontWeight="ExtraBold" FontSize="30" />
-                <TextBlock Text="{Binding Description}" FontSize="30"/>
-                </StackPanel>
-
-
-                <ScrollViewer  VerticalScrollBarVisibility="Visible">
-                        
-                        <ListBox Name="StepsList" ItemsSource="{Binding Steps}"   Margin="0,-7,0,0">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                <StackPanel Background="Orange" Width="600" Margin="0,0,0,10">
-                                    <CheckBox IsChecked="{Binding Done}">
-                                        <CheckBox.Content>
-                                            <TextBlock TextWrapping="Wrap" Text="{Binding Description}"
-               Style="{StaticResource PhoneTextNormalStyle}"
-               Foreground="{StaticResource PhoneAccentBrush}" />
-                                        </CheckBox.Content>
-                                    </CheckBox>
-                                </StackPanel>
-                            </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </ScrollViewer>
- 
-
-
-
-            </StackPanel>
-            
         </Grid>
+        <StackPanel x:Name="StepsPanel" Grid.Row="2"   Margin="12,0,12,0" VerticalAlignment="Top">
+            <TextBlock x:Name="lbSteps"  Text="Steps" Margin="9,9,0,9"/>
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <ListBox Name="StepsList" ItemsSource="{Binding Step}"  Margin="9,-7,0,0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="{Binding Description}" Margin="9,-7,0,0" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
 
 </phone:PhoneApplicationPage>
