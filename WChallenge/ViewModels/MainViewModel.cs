@@ -69,7 +69,7 @@ namespace WChallenge
             this.Steps.Add(new StepViewModel() { Description = "Push away in a dirrection of your attacker's stomack", Done = false });
             
             this.Items.Add(new TechnicViewModel() {Id=1, Steps =Steps, Name = "Wrist Lock Getaway", Description = "Getting away if your wrests are kept", percentageDone = 54 });
-            MessageBox.Show(Steps[3].Description);
+            
             Steps.Clear();
 			 this.Steps.Add(new StepViewModel() { Description="When an arm comes toward you use your forearms to block it putting one hand at a forearm and one hand above the elbow", Done=false});
             this.Steps.Add(new StepViewModel() { Description = "Wrap your hand around the neck", Done = false });
