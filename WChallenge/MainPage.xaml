@@ -19,13 +19,13 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="HI-YAH!">
+        <controls:Panorama Title="" Margin="10,-10,-10,10">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
 
 
-            <controls:PanoramaItem Header="Learn Stance">
+            <controls:PanoramaItem Header="Learn technic">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                      <ListBox.ItemTemplate>
@@ -65,7 +65,7 @@
                 </ListBox>-->
             </controls:PanoramaItem>
 
-            <controls:PanoramaItem Header="Learn Stance">
+            <controls:PanoramaItem Header="">
                 <ListBox>
                     <TextBlock Text="Fight Maneuvers" FontSize="35"/>
                     <TextBlock Text="Safety Tips" FontSize="35"/>
