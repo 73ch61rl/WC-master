@@ -19,9 +19,9 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="KickAss App">
+        <controls:Panorama Title="HI-YAH!">
             <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
+                <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
 
 
