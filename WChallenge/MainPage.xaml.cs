@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Collections.ObjectModel;
 
 namespace WChallenge
 {
@@ -31,15 +32,29 @@ namespace WChallenge
         {
             if (!App.ViewModel.IsDataLoaded)
             {
-                App.ViewModel.LoadData();
+                App.ViewModel.LoadData(); 
             }
         }
 
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+          
+
+           //MessageBox.Show("MAINPAGE= "+Convert.ToString(App.ViewModel.Items[0].percentageDone));
+        }
+
+
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            TechnicViewModel item = new TechnicViewModel(); 
-            item = TechnicListBox.SelectedItem as TechnicViewModel; 
-            NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id , UriKind.Relative));
+            if (TechnicListBox.SelectedIndex == -1)
+                return;
+                TechnicViewModel item = new TechnicViewModel();
+                item = TechnicListBox.SelectedItem as TechnicViewModel;
+                NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id, UriKind.Relative));
+            
+            TechnicListBox.SelectedIndex = -1;
+
+            
         }
 
 

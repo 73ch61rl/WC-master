@@ -40,12 +40,13 @@
 
         </Grid>
         <StackPanel x:Name="StepsPanel" Grid.Row="2"   Margin="12,0,12,0" VerticalAlignment="Top">
-            <TextBlock x:Name="lbSteps"  Text="Steps" Margin="9,9,0,9"/>
+            <TextBlock FontWeight="ExtraLight" TextWrapping="Wrap"  Text="{Binding Description}" FontSize="40"  Margin="9,0,0,9"/>
+            <TextBlock x:Name="lbSteps" FontWeight="ExtraBold" FontSize="30"  Text="Steps" Margin="9,2,0,9"/>
             <ScrollViewer VerticalScrollBarVisibility="Visible">
-                <ListBox Name="StepsList" ItemsSource="{Binding Step}"  Margin="9,-7,0,0">
+                <ListBox Name="StepsList" ItemsSource="{Binding Path=Step, Mode=TwoWay}"  Margin="9,-7,0,0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <CheckBox Content="{Binding Description}" Margin="9,-7,0,0" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" />
+                            <CheckBox Content="{Binding Description}" Margin="9,-7,0,0" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

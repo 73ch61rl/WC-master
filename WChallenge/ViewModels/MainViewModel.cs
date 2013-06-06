@@ -62,7 +62,7 @@ namespace WChallenge
             technic0Steps.Add(new StepViewModel() { Description = "Strike to a nose", Done = false });
             technic0Steps.Add(new StepViewModel() { Description = "If the attacker is larger than you try to strike some other sensitive areas like a face", Done = false });
            
-            this.Items.Add(new TechnicViewModel() { Id=0, Step = technic0Steps, Name = "Nose Punch", Description = "Striking the nose.", VideoLink = new Uri("http://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DAwvfFWDtOZE&usd=2&usg=ALhdy282StejPxMnGxXpl6Gt7ScPUVoakg"), percentageDone = 20, Thumb = new Uri("http://goo.gl/zDsV3")});
+            this.Items.Add(new TechnicViewModel() { Id=0, Step = technic0Steps, Name = "Nose Punch", Description = "Striking the nose.", VideoLink = new Uri("http://www.google.com/url?q=https://www.youtube.com/watch%3Fv%3DAwvfFWDtOZE&usd=2&usg=ALhdy282StejPxMnGxXpl6Gt7ScPUVoakg"), percentageDone = 0, Thumb = new Uri("http://goo.gl/zDsV3")});
 
             var technicSteps = new ObservableCollection<StepViewModel>();
             technicSteps.Add(new StepViewModel() { Description = "When an arm comes toward you use your forearms to block it putting one hand at a forearm and one hand above the elbow", Done = false });
@@ -72,7 +72,7 @@ namespace WChallenge
             technicSteps.Add(new StepViewModel() { Description = "Strike with your knee to a stomach or a groin", Done = false });  
       
                  
-          this.Items.Add(new TechnicViewModel() { Id=2, Step = technicSteps, Name = "Swing Defence", Description = "Defending if someone swings at you.", percentageDone = 60 });  
+          this.Items.Add(new TechnicViewModel() { Id=2, Step = technicSteps, Name = "Swing Defence", Description = "Defending if someone swings at you.", percentageDone = 0 });  
  
 
             var technic1Steps = new ObservableCollection<StepViewModel>();
@@ -84,11 +84,11 @@ namespace WChallenge
 
             this.Items.Add(new TechnicViewModel()
             {
-                Id = 0,
+                Id = 3,
                 Name = "Horse Stance",
                 Description = "Maecenas praesent accumsan bibendum",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
-                percentageDone = 20,
+                percentageDone = 0,
                 ImageLink = new Uri("http://goo.gl/zDsV3"),
                 Thumb = new Uri("http://img.youtube.com/vi/kTSgnaG3mhg/0.jpg"),
                 Step = technic1Steps
@@ -104,11 +104,11 @@ namespace WChallenge
 
             this.Items.Add(new TechnicViewModel()
             {
-                Id = 1,
+                Id = 4,
                 Name = "Palm heel strike to nose",
                 Description = "Maecenas praesent accumsan bibendum",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
-                percentageDone = 20,
+                percentageDone = 0,
                 ImageLink = new Uri("http://goo.gl/zDsV3"),
                 Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
                 Step = technic2Steps
@@ -122,7 +122,7 @@ namespace WChallenge
             technic3Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
             technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
             
-            this.Items.Add(new TechnicViewModel() { Id = 3, Step =  technic3Steps , Name = "Choke Escape", Description = "Escaping from a choke", percentageDone = 80 });
+            this.Items.Add(new TechnicViewModel() { Id = 5, Step =  technic3Steps , Name = "Choke Escape", Description = "Escaping from a choke", percentageDone = 0 });
 
             var technic4Steps = new ObservableCollection<StepViewModel>();
             technic4Steps.Add(new StepViewModel() { Description = "Spread your feet apart.", Done = false });
@@ -133,7 +133,7 @@ namespace WChallenge
             technic4Steps.Add(new StepViewModel() { Description = "Bring your knee back..", Done = false });
             technic4Steps.Add(new StepViewModel() { Description = "Come down.", Done = false });
 
-            this.Items.Add(new TechnicViewModel() { Id = 4, Step = technic4Steps, Name = "Basic Kick",  percentageDone = 80, VideoLink=new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog") });
+            this.Items.Add(new TechnicViewModel() { Id = 6, Step = technic4Steps, Name = "Basic Kick",  percentageDone = 0, VideoLink=new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog") });
 
 
             var technic5Steps = new ObservableCollection<StepViewModel>();
@@ -144,8 +144,21 @@ namespace WChallenge
             technic5Steps.Add(new StepViewModel() { Description = "Carry a pepper spray on your keychain and in case of an attack shoot at a safe distance", Done = false });
             technic5Steps.Add(new StepViewModel() { Description = "Carry a pepper spray on your keychain and in case of an attack shoot at a safe distance", Done = false });
 
-            this.Items.Add(new TechnicViewModel() { Id = 5, Step = technic5Steps, Name = "Self defence with heels and a keychain", Description = "Using everyday objects for defence.", VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"), percentageDone = 80 });
+            this.Items.Add(new TechnicViewModel() { Id = 7, Step = technic5Steps, Name = "Self defence with heels and a keychain", Description = "Using everyday objects for defence.", VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"), percentageDone = 0 });
 
+
+            //ObservableCollection<TechnicViewModel> Items;
+            //Items = App.ViewModel.Items;
+            //float doneNr ;
+            //foreach (TechnicViewModel t in Items)
+            //{ 
+            //    doneNr = 0;  
+            //    foreach (StepViewModel s in t.Step)
+            //    {
+            //        if (s.Done) { doneNr++; }
+            //    }
+            //    t.percentageDone = Convert.ToDouble( (doneNr / t.Step.Count) * 100);  
+            //} 
 
             this.IsDataLoaded = true;
         }
