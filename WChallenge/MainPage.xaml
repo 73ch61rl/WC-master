@@ -19,7 +19,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="" Margin="10,-10,-10,10">
+        <controls:Panorama Title="  " Margin="10,-10,-10,10">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
@@ -50,28 +50,19 @@
             <controls:PanoramaItem Header=" ">
                 <!--Double line list with text wrapping-->
                 <StackPanel>
-                    <TextBlock Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Foreground="white" Margin="0,-96,0,0"/>
-                    <TextBlock Margin="0,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes." Foreground="White"/>
+                    <TextBlock Foreground="Black" Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap"   Margin="0,-96,0,0"/>
+                    <TextBlock Foreground="Black" Margin="0,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
                 </StackPanel>
-                    <!--<ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432" Height="78">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>-->
+                   
             </controls:PanoramaItem>
 
             <controls:PanoramaItem Header="">
-                <ListBox>
-                    <TextBlock Text="Fight Maneuvers" FontSize="35"/>
-                    <TextBlock Text="Safety Tips" FontSize="35"/>
-                    <TextBlock Text="Fight styles" FontSize="35"/>
-                    <TextBlock Text="Abuse Feeds" FontSize="35"/>
-                    <TextBlock Text="Law and Policy" FontSize="35"/>
+                <ListBox Margin="0,60,0,0">
+                    <Button Foreground="Black" BorderBrush="Transparent" Content="Fight Maneuvers" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
+                    <Button Foreground="Black" BorderBrush="Transparent" Content="Safety Tips" FontSize="35"/>
+                    <Button Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
+                    <Button Foreground="Black" BorderBrush="Transparent" Content="Abuse Feeds" Click="abuse_feeds_Click_3" FontSize="35"/>
+                    <Button Foreground="Black" BorderBrush="Transparent" Content="Law and Policy" FontSize="35"/>
                 </ListBox>
             </controls:PanoramaItem>
 

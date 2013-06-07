@@ -147,18 +147,18 @@ namespace WChallenge
             this.Items.Add(new TechnicViewModel() { Id = 7, Step = technic5Steps, Name = "Self defence with heels and a keychain", Description = "Using everyday objects for defence.", VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"), percentageDone = 0 });
 
 
-            //ObservableCollection<TechnicViewModel> Items;
-            //Items = App.ViewModel.Items;
-            //float doneNr ;
-            //foreach (TechnicViewModel t in Items)
-            //{ 
-            //    doneNr = 0;  
-            //    foreach (StepViewModel s in t.Step)
-            //    {
-            //        if (s.Done) { doneNr++; }
-            //    }
-            //    t.percentageDone = Convert.ToDouble( (doneNr / t.Step.Count) * 100);  
-            //} 
+            ObservableCollection<TechnicViewModel> Items;
+            Items = App.ViewModel.Items;
+            float doneNr;
+            foreach (TechnicViewModel t in Items)
+            {
+                doneNr = 0;
+                foreach (StepViewModel s in t.Step)
+                {
+                    if (s.Done) { doneNr++; }
+                }
+                t.percentageDone = Convert.ToDouble((doneNr / t.Step.Count) * 100);
+            } 
 
             this.IsDataLoaded = true;
         }

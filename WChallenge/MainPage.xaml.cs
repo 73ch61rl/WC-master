@@ -11,6 +11,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Collections.ObjectModel;
+using System.Net.NetworkInformation;
+using Microsoft.Phone.Tasks;
 
 namespace WChallenge
 {
@@ -24,6 +26,22 @@ namespace WChallenge
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+            if (!NetworkInterface.GetIsNetworkAvailable())
+            {
+              MessageBoxResult m =  MessageBox.Show("You arent connected to the internet to load the techniques. Want to connect now?", "No connection", MessageBoxButton.OKCancel);
+                if(m==MessageBoxResult.OK){
+                    ConnectionSettingsTask connectionSettingsTask = new ConnectionSettingsTask();
+                    connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
+                    connectionSettingsTask.Show();
+                }
+                if (m == MessageBoxResult.Cancel)
+                {
+                    
+                }
+               
+
+
+            }
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
          
@@ -55,6 +73,18 @@ namespace WChallenge
             TechnicListBox.SelectedIndex = -1;
 
             
+        }
+
+        
+
+        private void fight_manuervers_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/FightManeuvers.xaml",UriKind.Relative));
+        }
+
+        private void abuse_feeds_Click_3(object sender, RoutedEventArgs e)
+        {
+
         }
 
 
