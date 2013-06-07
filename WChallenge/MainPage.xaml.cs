@@ -79,7 +79,7 @@ namespace WChallenge
 
         private void fight_manuervers_Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/FightManeuvers.xaml",UriKind.Relative));
+            NavigationService.Navigate(new Uri("/SelfDefenceTactics.xaml", UriKind.Relative));
         }
 
         private void abuse_feeds_Click_3(object sender, RoutedEventArgs e)

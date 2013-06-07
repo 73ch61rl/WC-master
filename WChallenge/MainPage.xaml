@@ -7,36 +7,71 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False">
+    shell:SystemTray.IsVisible="False"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+
+    <!--Transitions-->
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
- 
+
         <!--Panorama control-->
         <controls:Panorama Title="  " Margin="10,-10,-10,10">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
 
+            <controls:PanoramaItem Header=" ">
+                <!--Double line list with text wrapping-->
+                <StackPanel    Margin="0,-100,0,0" >
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap"    Margin="15,0,0,0"/>
+                    <TextBlock  Foreground="Black" Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
+                </StackPanel>
 
-            <controls:PanoramaItem Header="Learn technic">
+            </controls:PanoramaItem>
+            
+            
+            <controls:PanoramaItem FontWeight="ExtraBold" Header="Learn technique">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                      <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                            <StackPanel Background="Silver"   Orientation="Horizontal" Margin="0,0,0,20">
                                 <!--Replace rectangle with image-->
-                                <Image Height="100" Width="100"  Source="{Binding Thumb}" Margin="12,0,9,0"/>
+                                <Image  Opacity="0" Height="100" Width="100"  Source="{Binding Thumb}" Margin="12,0,9,0"  />
                                 <StackPanel Width="311">
-                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="AliceBlue" Margin="-20,10,0,0"/>
-                                    <Rectangle x:Name="redRec"  Fill="Red" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"/>
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="30" Foreground="Black"   Opacity="1"/>
+                                    <Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" Margin="-20,10,0,0"  Opacity="1"/>
+                                    <Rectangle x:Name="redRec"  Fill="{StaticResource PhoneAccentBrush}" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"  Opacity="1"/>
 
                                     <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
                                 </StackPanel>
@@ -45,24 +80,17 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PanoramaItem>
-            
 
-            <controls:PanoramaItem Header=" ">
-                <!--Double line list with text wrapping-->
-                <StackPanel>
-                    <TextBlock Foreground="Black" Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap"   Margin="0,-96,0,0"/>
-                    <TextBlock Foreground="Black" Margin="0,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
-                </StackPanel>
-                   
-            </controls:PanoramaItem>
+ 
 
-            <controls:PanoramaItem Header="">
-                <ListBox Margin="0,60,0,0">
-                    <Button Foreground="Black" BorderBrush="Transparent" Content="Fight Maneuvers" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
-                    <Button Foreground="Black" BorderBrush="Transparent" Content="Safety Tips" FontSize="35"/>
-                    <Button Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
-                    <Button Foreground="Black" BorderBrush="Transparent" Content="Abuse Feeds" Click="abuse_feeds_Click_3" FontSize="35"/>
-                    <Button Foreground="Black" BorderBrush="Transparent" Content="Law and Policy" FontSize="35"/>
+                <controls:PanoramaItem Header="">
+                <ListBox Foreground="Bisque" Margin="0,50,0,0">
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Self Defence Tactics" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Safety Tips" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Abuse Stories" Click="abuse_feeds_Click_3" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Common Code and Law" FontSize="35"/>
+                    <Button Background="White" Foreground="Red" BorderBrush="Transparent" Content="HELP!" FontSize="35" Margin="0"/>
                 </ListBox>
             </controls:PanoramaItem>
 
