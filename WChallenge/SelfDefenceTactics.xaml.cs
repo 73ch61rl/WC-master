@@ -9,6 +9,11 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Collections;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Xml.Serialization;
+using System.Xml;
+using System.IO.IsolatedStorage;
+using System.IO;
 
 namespace WChallenge
 {
@@ -40,10 +45,69 @@ namespace WChallenge
         void add_Click(object sender, EventArgs e)
         {
             IList source = FightList.ItemsSource as IList;
+            ObservableCollection<TechnicViewModel> Items = new ObservableCollection<TechnicViewModel>();
             while (FightList.SelectedItems.Count > 0)
             {
-                //save list/oc in isolated storage
+                foreach (TechnicViewModel t in FightList.SelectedItems)
+                {
+                   
+                    Items.Add(t);
+                }
             }
+            SaveInIS(Items);
+        }
+      
+
+        private void SaveInIS(ObservableCollection<TechnicViewModel> items)
+        {
+            ObservableCollection<TechnicViewModel> _list = new ObservableCollection<TechnicViewModel>();
+
+            //OPens the USerItem xml file 
+            try
+            {
+                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("UserItems.xml", FileMode.OpenOrCreate))
+                    {
+                        if (stream.Length > 0)
+                        {
+                            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechnicViewModel>));
+                            _list = (ObservableCollection<TechnicViewModel>)serializer.Deserialize(stream);
+                        }
+
+                    }
+                }
+            }
+            catch
+            {
+                //MessageBox.Show("nothing in the list");  
+            }
+
+            foreach(TechnicViewModel t in items ){
+            _list.Add(t);
+            }
+
+            MessageBox.Show(_list[3].Name);
+
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.Indent = true;
+            using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+
+                using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("Hello.xml", FileMode.OpenOrCreate))
+                {
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechnicViewModel>));
+                    using (XmlWriter xmlWriter = XmlWriter.Create(stream, xmlWriterSettings))
+                    {
+                        serializer.Serialize(xmlWriter, _list);
+                       
+                    }
+
+
+                }
+            } 
+
         }
 
 
@@ -113,6 +177,8 @@ namespace WChallenge
             MessageBox.Show("This page shows you all the defence techniques you can use to defend yourself from attacks. Choose the ones you want to learn and track your progress from the main page.", "About", MessageBoxButton.OK);
 
         }
+
+
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
