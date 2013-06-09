@@ -79,16 +79,17 @@ namespace WChallenge
             technic0Steps.Add(new StepViewModel() { Description="If a stranger grabbed your hand, raise your other hand", Done=false});
             technic0Steps.Add(new StepViewModel() { Description = "Pull your fingers back", Done = false });
             technic0Steps.Add(new StepViewModel() { Description = "Strike to a nose", Done = false });
-            technic0Steps.Add(new StepViewModel() { Description = "If the attacker is larger than you try to strike some other sensitive areas like a face", Done = false });
+            technic0Steps.Add(new StepViewModel() { Description = "If the attacker is larger than you try to strike some other sensitive face area", Done = false });
 
             this.Items.Add(new TechniqueViewModel() 
             { 
               Id = 0,
               Step = technic0Steps,
-              Name = "Nose Punch", 
-              Description = "Striking the nose.",
+              Name = "Face punch", 
+              Description = "Learn how to strike to a nose or other face area.",
               VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
-              Thumb = new Uri("http://sdrv.ms/12z8GlD"),
+              ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
+              Thumb = new Uri("Assets/face_punch.jpg", UriKind.Relative),
               percentageDone = 0
             });
 
@@ -105,11 +106,11 @@ namespace WChallenge
             { 
               Id = 2,
               Step = technicSteps,
-              Name = "Swing Defence",
+              Name = "Swing defence",
               Description = "Defending if someone swings at you.",
-              VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
-              ImageLink = new Uri("http://goo.gl/zDsV3"),
-              Thumb = new Uri("http://img.youtube.com/vi/kTSgnaG3mhg/0.jpg"),
+              VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
+              ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
+              Thumb = new Uri("/Assets/swing.jpg", UriKind.Relative),
               percentageDone = 0
 
             });  
@@ -126,11 +127,11 @@ namespace WChallenge
             {
                 Id = 3,
                 Step = technic1Steps,
-                Name = "Horse Stance",
+                Name = "Horse stance",
                 Description = "The basic stance you can meet in all martial arts.",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
-                ImageLink = new Uri("http://goo.gl/zDsV3"),
-                Thumb = new Uri("http://img.youtube.com/vi/kTSgnaG3mhg/0.jpg"),
+                ImageLink = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
                 percentageDone = 0
             });
             
@@ -146,16 +147,16 @@ namespace WChallenge
             this.Items.Add(new TechniqueViewModel()
             {
                 Id = 4,
-                Name = "Palm heel strike to nose",
+                Name = "Palm heel strike in a horse stance",
                 Description = "Practicing palm heel strike being in horse stance",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
-                ImageLink = new Uri("http://goo.gl/zDsV3"),
-                Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
+                ImageLink = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
                 percentageDone = 0,
                 Step = technic2Steps
             });
 
-            //5 technic - choke escape
+            //5 technic - front choke escape using elbow strike
             var technic3Steps = new ObservableCollection<StepViewModel>();
             technic3Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
             technic3Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
@@ -167,13 +168,33 @@ namespace WChallenge
             { 
               Id = 5,
               Step = technic3Steps,
-              Name = "Choke Escape",
+              Name = "Front choke escape with elbow strike",
               Description = "Escaping from a choke",
-              VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
-              ImageLink = new Uri("http://goo.gl/zDsV3"),
-              Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
+              VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
+              ImageLink = new Uri("/Assets/choke_elbow.jpg", UriKind.Relative),
+              Thumb = new Uri("/Assets/chokee_elbow.jpg", UriKind.Relative),
               percentageDone = 0    
             });
+
+            /*//5 technic - front choke release move using hammer strike
+            var technic3Steps = new ObservableCollection<StepViewModel>();
+            technic3Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to push down his elbow", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
+
+            this.Items.Add(new TechniqueViewModel()
+            {
+                Id = 5,
+                Step = technic3Steps,
+                Name = "Choke Escape",
+                Description = "Escaping from a choke",
+                VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
+                ImageLink = new Uri("http://goo.gl/zDsV3"),
+                Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
+                percentageDone = 0
+            });*/
 
             //6 technic - basic kick
             var technic4Steps = new ObservableCollection<StepViewModel>();
@@ -191,8 +212,8 @@ namespace WChallenge
               Step = technic4Steps,
               Name = "Basic Kick",
               VideoLink=new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog"),
-              ImageLink = new Uri("http://img.youtube.com/vi/yKEy3tEhCog/1.jpg"),
-              Thumb = new Uri("http://img.youtube.com/vi/yKEy3tEhCog/1.jpg"),
+              ImageLink = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
+              Thumb = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
               percentageDone = 0
             });
 
@@ -211,8 +232,8 @@ namespace WChallenge
                Name = "Self defence with heels and a keychain",
                Description = "Using objects from your lady bag or shoes for defence in everyday life.",
                VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"),
-               ImageLink = new Uri("http://sdrv.ms/13uuKut"),
-               Thumb = new Uri("http://sdrv.ms/13uuKut"),
+               ImageLink = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
+               Thumb = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
                percentageDone = 0 
             });
 
