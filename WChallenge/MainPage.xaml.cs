@@ -66,8 +66,8 @@ namespace WChallenge
         {
             if (TechnicListBox.SelectedIndex == -1)
                 return;
-                TechnicViewModel item = new TechnicViewModel();
-                item = TechnicListBox.SelectedItem as TechnicViewModel;
+                TechniqueViewModel item = new TechniqueViewModel();
+                item = TechnicListBox.SelectedItem as TechniqueViewModel;
                 NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id, UriKind.Relative));
             
             TechnicListBox.SelectedIndex = -1;

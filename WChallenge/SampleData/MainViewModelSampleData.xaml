@@ -5,12 +5,12 @@
     SampleProperty="Sample Text Property Value">
     
     <local:MainViewModel.Items>
-        <local:TechnicViewModel  Description="Maecenas praesent accumsan bibendum" percentageDone="30"/>
-        <local:TechnicViewModel   Description="Dictumst eleifend facilisi faucibus" percentageDone="56"/>
-        <local:TechnicViewModel  Description="Habitant inceptos interdum lobortis" percentageDone="90"/>
-        <local:TechnicViewModel  Description="Nascetur pharetra placerat pulvinar" percentageDone="56"/>
-        <local:TechnicViewModel   Description="Sagittis senectus sociosqu suscipit" percentageDone="56"/>
-        <local:TechnicViewModel   Description="Torquent ultrices vehicula volutpat" percentageDone="23"/>
+        <local:TechniqueViewModel  Description="Maecenas praesent accumsan bibendum" percentageDone="30"/>
+        <local:TechniqueViewModel   Description="Dictumst eleifend facilisi faucibus" percentageDone="56"/>
+        <local:TechniqueViewModel  Description="Habitant inceptos interdum lobortis" percentageDone="90"/>
+        <local:TechniqueViewModel  Description="Nascetur pharetra placerat pulvinar" percentageDone="56"/>
+        <local:TechniqueViewModel   Description="Sagittis senectus sociosqu suscipit" percentageDone="56"/>
+        <local:TechniqueViewModel   Description="Torquent ultrices vehicula volutpat" percentageDone="23"/>
     </local:MainViewModel.Items>
     
 </local:MainViewModel>

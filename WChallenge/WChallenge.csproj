@@ -122,7 +122,7 @@
     <Compile Include="Technique.xaml.cs">
       <DependentUpon>Technique.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\TechnicViewModel.cs" />
+    <Compile Include="ViewModels\TechniqueViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

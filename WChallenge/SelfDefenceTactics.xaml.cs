@@ -45,10 +45,10 @@ namespace WChallenge
         void add_Click(object sender, EventArgs e)
         {
             IList source = FightList.ItemsSource as IList;
-            ObservableCollection<TechnicViewModel> Items = new ObservableCollection<TechnicViewModel>();
+            ObservableCollection<TechniqueViewModel> Items = new ObservableCollection<TechniqueViewModel>();
             while (FightList.SelectedItems.Count > 0)
             {
-                foreach (TechnicViewModel t in FightList.SelectedItems)
+                foreach (TechniqueViewModel t in FightList.SelectedItems)
                 {
                    
                     Items.Add(t);
@@ -58,9 +58,9 @@ namespace WChallenge
         }
       
 
-        private void SaveInIS(ObservableCollection<TechnicViewModel> items)
+        private void SaveInIS(ObservableCollection<TechniqueViewModel> items)
         {
-            ObservableCollection<TechnicViewModel> _list = new ObservableCollection<TechnicViewModel>();
+            ObservableCollection<TechniqueViewModel> _list = new ObservableCollection<TechniqueViewModel>();
 
             //OPens the USerItem xml file 
             try
@@ -71,8 +71,8 @@ namespace WChallenge
                     {
                         if (stream.Length > 0)
                         {
-                            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechnicViewModel>));
-                            _list = (ObservableCollection<TechnicViewModel>)serializer.Deserialize(stream);
+                            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
+                            _list = (ObservableCollection<TechniqueViewModel>)serializer.Deserialize(stream);
                         }
 
                     }
@@ -83,7 +83,7 @@ namespace WChallenge
                 //MessageBox.Show("nothing in the list");  
             }
 
-            foreach(TechnicViewModel t in items ){
+            foreach(TechniqueViewModel t in items ){
             _list.Add(t);
             }
 
@@ -97,7 +97,7 @@ namespace WChallenge
                 using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("Hello.xml", FileMode.OpenOrCreate))
                 {
 
-                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechnicViewModel>));
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
                     using (XmlWriter xmlWriter = XmlWriter.Create(stream, xmlWriterSettings))
                     {
                         serializer.Serialize(xmlWriter, _list);

@@ -1,4 +1,16 @@
-﻿using System;
+﻿/* *************************************************************************
+ * Class:       Technique.xaml.cs
+ * Made by:     Jalen Ins team (Maimuna Syed, Olga Shakurova, Irina Smirnova)
+ * Country:     Finland
+ * Year:        2013
+ * ------------------------------------------------------------------------
+ * Application: KIAI!
+ * Description: Self-defence guide for women
+ * Competition: Imagine Cup - Women's Athletic App Challenge
+ * Category:    Sport
+ * 
+ ************************************************************************* */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -15,14 +27,11 @@ using System.IO;
 using System.Xml.Serialization;
 
 
-
-
-
 namespace WChallenge
 {
     public partial class Technique : PhoneApplicationPage
     {
-        public ObservableCollection<TechnicViewModel> Items { get; private set; }
+        public ObservableCollection<TechniqueViewModel> Items { get; private set; }
 
         public Technique()
         {
@@ -44,7 +53,7 @@ namespace WChallenge
  
             if (IsolatedStorageSettings.ApplicationSettings.Contains("UserTechniques"))
             {
-                this.DataContext = ((ObservableCollection<TechnicViewModel>)IsolatedStorageSettings.ApplicationSettings["UserTechniques"])[techniqueId];
+                this.DataContext = ((ObservableCollection<TechniqueViewModel>)IsolatedStorageSettings.ApplicationSettings["UserTechniques"])[techniqueId];
             } 
             else 
             {
@@ -56,7 +65,7 @@ namespace WChallenge
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
             String technicName = tbTechnicName.Text.ToString();
-            TechnicViewModel result = Items.Where(X => X.Name == technicName).FirstOrDefault();
+            TechniqueViewModel result = Items.Where(X => X.Name == technicName).FirstOrDefault();
             WebBrowserTask webBrowserTask = new WebBrowserTask();
             //webBrowserTask.Uri = new Uri(result.VideoLink.ToString(), UriKind.Absolute);
             webBrowserTask.URL = "vnd.youtube:" + result.VideoLink.ToString().Substring(result.VideoLink.ToString().LastIndexOf("=") + 1);

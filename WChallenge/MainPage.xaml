@@ -54,7 +54,7 @@
                 <!--Double line list with text wrapping-->
                 <StackPanel    Margin="0,-100,0,0" >
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap"    Margin="15,0,0,0"/>
-                    <TextBlock  Foreground="Black" Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
+                    <TextBlock Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
                 </StackPanel>
 
             </controls:PanoramaItem>
