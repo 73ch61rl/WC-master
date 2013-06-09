@@ -51,34 +51,56 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Foreground="Black" Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Foreground="Black" x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock   Foreground="Black" x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" FontWeight="ExtraBlack"  />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Height="Auto" Width="Auto" Click="BtAdd_Click">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <!--<MediaElement Source="http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8s_jleJFR_M" AutoPlay="True"/>-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,10" Grid.RowSpan="2">
+            <StackPanel Orientation="Vertical">
 
+                <Button Height="200" Width="Auto" Click="BtAdd_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="About: " FontWeight="ExtraBold" Foreground="Black" FontSize="30"/>
+                    <TextBlock Foreground="Black" FontWeight="ExtraLight" TextWrapping="Wrap"  Text="{Binding Description}" Height="auto" FontSize="30"  />
+                </StackPanel>
+
+
+                <StackPanel Margin="-12,10,0,0" Background="Gray">
+                    <TextBlock Foreground="Black" Margin="30,0,0,0"  FontWeight="ExtraBold" FontSize="30"  Text="STEPS"/>
+                </StackPanel>
+
+
+                <Grid>
+
+                    <ListBox Height="400" Foreground="Black" Name="StepsList" ItemsSource="{Binding Path=Step, Mode=TwoWay}"  >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="Orange" Margin="9,7,0,0" >
+                                    <!--<CheckBox Background="LightBlue" Foreground="Black" FontSize="20" Content="{Binding Description}" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" />-->
+                                    <CheckBox IsChecked="{Binding Done}">
+                                        <CheckBox.Content>
+                                            <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
+              Style="{StaticResource PhoneTextNormalStyle}"
+              Foreground="{StaticResource PhoneAccentBrush}" />
+                                        </CheckBox.Content>
+                                    </CheckBox>
+
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                </Grid>
+            </StackPanel>
         </Grid>
-        <StackPanel x:Name="StepsPanel" Grid.Row="2"   Margin="12,0,12,0" VerticalAlignment="Top"> 
-            <TextBlock Foreground="Black" FontWeight="ExtraLight" TextWrapping="Wrap"  Text="{Binding Description}" FontSize="40"  Margin="9,0,0,9"/>
-            <TextBlock Foreground="Black" x:Name="lbSteps" FontWeight="ExtraBold" FontSize="30"  Text="Steps" Margin="9,2,0,9"/>
-            <ScrollViewer VerticalScrollBarVisibility="Visible">
-                <ListBox Foreground="Black" Name="StepsList" ItemsSource="{Binding Path=Step, Mode=TwoWay}"  Margin="9,-7,0,0">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox Background="Silver" Foreground="Black" FontSize="20" Content="{Binding Description}" Margin="9,-7,0,0" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </ScrollViewer>
-        </StackPanel>
     </Grid>
 
 </phone:PhoneApplicationPage>
