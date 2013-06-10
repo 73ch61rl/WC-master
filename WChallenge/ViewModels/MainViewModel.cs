@@ -35,11 +35,16 @@ namespace WChallenge
     {
         public ObservableCollection<TechniqueViewModel> Items { get; private set; }
         // public ObservableCollection<StepViewModel> Steps { get; private set; }
+        public ObservableCollection<StepViewModel> Steps { get; private set; }
+        public ObservableCollection<TipViewModel> Tips { get; private set; }
+        public ObservableCollection<TipViewModel> RandomTip { get; private set; }
 
         public MainViewModel()
         {
             this.Items = new ObservableCollection<TechniqueViewModel>();
             // this.Steps = new ObservableCollection<StepViewModel>();
+            this.Tips = new ObservableCollection<TipViewModel>();
+            this.RandomTip = new ObservableCollection<TipViewModel>();
         }
 
 
@@ -210,6 +215,71 @@ namespace WChallenge
                Thumb = new Uri("http://sdrv.ms/13uuKut"),
                percentageDone = 0 
             });
+
+            //Safety tips
+            //1
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Look confident",
+                TipDescription = "Even looking strong and confident can prevent you from being approached"
+            });
+            //2
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Breathe",
+                TipDescription = "If you find yourself in a situation where you have to defend yourself, remember to breathe"
+            });
+            //3
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Train",
+                TipDescription = "Once the body starts dumping adrenaline into your system, all your analytical thinking and motor skills are gone. All you're left with is any repetitive training your body has learned"
+            });
+            //4
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Fight smart",
+                TipDescription = "Use your strengths against vulnerabilities: nose, ears, throat, groin"
+            });
+            //5
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Yell",
+                TipDescription = "Yelling increases power as much as 33 percent and can attract help"
+            });
+            //6
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Fight!",
+                TipDescription = "Women who resist attacks and act quickly are less likely to be raped, than those who are passive"
+            });
+            //7
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "React!",
+                TipDescription = "The optimum time to react is in the first 20 seconds when the body releases chemicals in the blood that help to put up a fight. Be cautious if he has a weapon"
+            });
+            //8
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Run",
+                TipDescription = "Only run if there is somewhere safe to run to. If there is no where to go you may aggravate the assailant further by running"
+            });
+            //9
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Low stances",
+                TipDescription = "Low stances, most often seen in traditional karate and in northern styles of Chinese boxing, are very helpful in self-defense but only if understood and practiced well"
+            });
+            //10
+            this.Tips.Add(new TipViewModel()
+            {
+                TipName = "Kick smart",
+                TipDescription = "If you kick someone, kick only their groin, kneecaps or shins to keep a steady balance"
+            });
+
+            Random rdm = new Random();
+            this.RandomTip.Add(Tips[rdm.Next(Tips.Count)]);
 
 
             ObservableCollection<TechniqueViewModel> Items;
