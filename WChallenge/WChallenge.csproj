@@ -100,6 +100,7 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +123,11 @@
     <Compile Include="Technique.xaml.cs">
       <DependentUpon>Technique.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TwitterItem.cs" />
     <Compile Include="ViewModels\TechniqueViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\TipViewModel.cs" />
+    <Compile Include="XElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

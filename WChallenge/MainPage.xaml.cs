@@ -96,7 +96,7 @@ namespace WChallenge
 
         private void abuse_feeds_Click_3(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/AbuseStories.xaml", UriKind.Relative));
         }
 
 

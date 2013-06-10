@@ -45,7 +45,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
         <!--Panorama control-->
-        <controls:Panorama Foreground="Black" Title="KIAI! " Margin="10,-10,-10,10">
+        <controls:Panorama Foreground="Black" Title="KIAI! " Margin="10,0,-10,10">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
@@ -60,7 +60,8 @@
             </controls:PanoramaItem>
             
             
-            <controls:PanoramaItem FontWeight="ExtraBold" Header="Learn technique">
+            <controls:PanoramaItem FontWeight="ExtraBlack"  Header="Learn" >
+               
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                      <ListBox.ItemTemplate>
@@ -88,14 +89,20 @@
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Self Defence Tactics" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Safety Tips" FontSize="35"/>
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Abuse Stories" Click="abuse_feeds_Click_3" FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Common Code and Law" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Stories" Click="abuse_feeds_Click_3" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Courses and Classes" FontSize="35"/>
                     <Button Background="White" Foreground="Red" BorderBrush="Transparent" Content="HELP!" FontSize="35" Margin="0"/>
                 </ListBox>
                     
             </controls:PanoramaItem>
 
         </controls:Panorama>
+        
+        <!--<StackPanel Background="White" 
+                    Height="200" Margin="12,-620,0,0">
+            <TextBlock Text="tactics: 7" Foreground="Black" FontWeight="ExtraBlack" Margin="12,100,0,0"/>
+        </StackPanel>-->
+        
     </Grid>
     
  

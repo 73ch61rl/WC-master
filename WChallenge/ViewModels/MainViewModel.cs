@@ -33,11 +33,14 @@ namespace WChallenge
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        
         public ObservableCollection<TechniqueViewModel> Items { get; private set; }
         // public ObservableCollection<StepViewModel> Steps { get; private set; }
         public ObservableCollection<StepViewModel> Steps { get; private set; }
         public ObservableCollection<TipViewModel> Tips { get; private set; }
         public ObservableCollection<TipViewModel> RandomTip { get; private set; }
+
+
 
         public MainViewModel()
         {

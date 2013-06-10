@@ -22,7 +22,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
+using Microsoft.Phone.Controls; 
+using System.Xml;
+using System.Xml.Serialization;
+using System.Xml.Linq;
+using System.Windows.Controls.Primitives;
+using System.ComponentModel;
+using System.Threading;
 
 namespace WChallenge
 {
@@ -31,6 +37,26 @@ namespace WChallenge
         public AbuseStories()
         {
             InitializeComponent();
+
+            WebClient twitter = new WebClient();
+            twitter.DownloadStringCompleted += new DownloadStringCompletedEventHandler(twitter_downloadstringCompleted);
+            twitter.DownloadStringAsync(new Uri("http://api.twitter.com/1/statuses/user_timeline.xml?screen_name=" + "defenseforwomen"));
+
+        }
+
+        private void twitter_downloadstringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            if (e.Error != null) return;
+
+            XElement xmlTweets = XElement.Parse(e.Result); 
+
+            listboxtweets.ItemsSource = from tweet in xmlTweets.Descendants("status")
+                                        select new TwitterItem
+                                        {
+                                            ImageSource = tweet.Element("user").Element("profile_image_url").Value,
+                                            Message = tweet.Element("text").Value,
+
+                                        };
         }
     }
 }

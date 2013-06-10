@@ -20,16 +20,54 @@
             <ImageBrush ImageSource="/Background.png"/>
         </Grid.Background>
         <!--Pivot Control-->
+     
+
+        
         <controls:Pivot Foreground="Black" Title="KIAI!" FontWeight="ExtraBold">
             <!--Pivot item one-->
-            <controls:PivotItem Header="AbuseStories" >
-                <Grid/>
+            <controls:PivotItem Header="stories" >
+
+                <ListBox   Margin="0,-100,0,0"  ItemsSource="{Binding Items}"  Name="listboxtweets" Height="500">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,30" Background="Gray" Opacity="50">
+
+                                <Image Source="{Binding ImageSource}" Height="73" Width="73" VerticalAlignment="Center" Margin="10,10,8,10"/>
+
+                                <StackPanel Width="370" >
+                                    <TextBlock Text="{Binding Message}" Foreground="WhiteSmoke" TextWrapping="Wrap"  Margin="0,15,0,15" Height="auto" Width="300" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Text="{Binding UserName}" Foreground="Gray" TextWrapping="Wrap" Margin="12,-6,12,0"  />
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </controls:PivotItem>
 
             <!--Pivot item two-->
-            <controls:PivotItem Header="Share Yours">
-                <Grid/>
+            <controls:PivotItem Header="share yours">
+                <StackPanel>
+                    <ListBox Background="Coral">
+                        <TextBlock x:Name="storiesTB" Height="400">
+                         </TextBlock>
+                    </ListBox>
+                <TextBox TextWrapping="Wrap" x:Name="typeTxtB" Height="200" > </TextBox>
+                </StackPanel>
             </controls:PivotItem>
+     
+
+        <controls:PivotItem Header="crime graph">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="tags: "/>
+                        <TextBox Text="#female #rape #abuse" Foreground="Gray"/>
+                    </StackPanel>
+                </StackPanel>
+            </controls:PivotItem>
+            
         </controls:Pivot>
     </Grid>
     

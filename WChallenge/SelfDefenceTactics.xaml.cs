@@ -58,22 +58,41 @@ namespace WChallenge
         {
             IList source = FightList.ItemsSource as IList;
             ObservableCollection<TechniqueViewModel> Items = new ObservableCollection<TechniqueViewModel>();
-            while (FightList.SelectedItems.Count > 0)
+            if(FightList.SelectedItems.Count > 0)
             {
+                
                 foreach (TechniqueViewModel t in FightList.SelectedItems)
-                {
-                   
+                { 
                     Items.Add(t);
                 }
             }
             SaveInIS(Items);
+
+            if (FightList.IsSelectionEnabled)
+            {
+                FightList.IsSelectionEnabled = false;
+                FightList.Width = FightList.Width + 100;
+               
+            }
         }
-      
+
+        class Util
+        {
+            public static void SerializeObjectToXML<T>(T item, string FilePath)
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(T));
+                using (StreamWriter wr = new StreamWriter(FilePath))
+                {
+                    xs.Serialize(wr, item);
+                }
+            }
+        }
 
         private void SaveInIS(ObservableCollection<TechniqueViewModel> items)
         {
             ObservableCollection<TechniqueViewModel> _list = new ObservableCollection<TechniqueViewModel>();
 
+          
             //OPens the USerItem xml file 
             try
             {
@@ -85,8 +104,7 @@ namespace WChallenge
                         {
                             XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
                             _list = (ObservableCollection<TechniqueViewModel>)serializer.Deserialize(stream);
-                        }
-
+                        } 
                     }
                 }
             }
@@ -97,25 +115,24 @@ namespace WChallenge
 
             foreach(TechniqueViewModel t in items ){
             _list.Add(t);
+
             }
-
-            MessageBox.Show(_list[3].Name);
-
+             
             XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
             xmlWriterSettings.Indent = true;
             using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
             {
 
-                using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("Hello.xml", FileMode.OpenOrCreate))
+                using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("UserTactic.xml", FileMode.OpenOrCreate))
                 {
 
                     XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
                     using (XmlWriter xmlWriter = XmlWriter.Create(stream, xmlWriterSettings))
                     {
-                        serializer.Serialize(xmlWriter, _list);
+                        
+                            serializer.Serialize(xmlWriter, _list);
                        
-                    }
-
+                    } 
 
                 }
             } 
@@ -186,7 +203,7 @@ namespace WChallenge
 
         private void fight_man_about_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This page shows you all the defence techniques you can use to defend yourself from attacks. Choose the ones you want to learn and track your progress from the main page.", "About", MessageBoxButton.OK);
+            MessageBox.Show("This page shows you all the defence tactics you can use to defend yourself from attacks. Choose the ones you want to learn and track your progress from the main page.", "About", MessageBoxButton.OK);
 
         }
 

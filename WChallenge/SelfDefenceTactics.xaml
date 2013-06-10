@@ -56,7 +56,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Foreground="Black" Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}" FontWeight="ExtraBold"/>
-            <TextBlock FontWeight="ExtraBold"  TextWrapping="Wrap"  Foreground="Black" Text="Self Defence Tactics" Margin="9,-7,0,0" FontSize="45"  />
+            <TextBlock FontWeight="ExtraBold"  TextWrapping="Wrap"  Foreground="Black" Text="self defence tactics" Margin="9,-7,0,0" FontSize="45"  />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -66,7 +66,7 @@
                 <toolkit:MultiselectList x:Name="FightList"  
                                      Background="transparent"
                                      SelectionChanged="ListBox_SelectionChanged_1"
-                                     IsSelectionEnabledChanged="IsSelectionEnabledChanged"
+                                Margin="-22,0,0,0"     IsSelectionEnabledChanged="IsSelectionEnabledChanged"
                                      ItemsSource="{Binding Items, Mode=TwoWay}"
                                      Foreground="Black"
                                      >
@@ -80,7 +80,7 @@
                 <toolkit:MultiselectList.ItemTemplate>
                     <DataTemplate> 
                         <StackPanel  Background="{StaticResource PhoneAccentBrush}"    Orientation="Horizontal" Margin="0,0,0,20">
-                            <Image Height="100" Width="100"  Source="{Binding Thumb}" Margin="5,0,9,0"/>
+                            <Image VerticalAlignment="Top" Height="100" Width="100"  Source="{Binding Thumb}" Margin="5,0,9,0"/>
                             
                             <StackPanel Width="311" Height="Auto" Orientation="Vertical">
                                 <TextBlock Foreground="Black" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
