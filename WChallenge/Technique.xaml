@@ -38,53 +38,52 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" >
+      
         <Grid.Background>
             <ImageBrush ImageSource="/Background.png">
             </ImageBrush>
         </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Foreground="Black" Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock   Foreground="Black" x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" FontWeight="ExtraBlack"  />
-        </StackPanel>
+        <StackPanel>
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock Foreground="Black" Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <TextBlock   Foreground="Black" x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" FontWeight="ExtraBlack"  />
+            </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,10" Grid.RowSpan="2">
-            <StackPanel Orientation="Vertical">
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
+                <StackPanel Orientation="Vertical">
 
-                <Button Height="200" Width="Auto" Click="BtAdd_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                    <Button Height="200"   Margin="-12,0,-10,0" Click="BtAdd_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <StackPanel>
+                                <Image Height="Auto" Width="Auto"  Source="{Binding Thumb}"/>
+                                 </StackPanel>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="About: " FontWeight="ExtraBold" Foreground="Black" FontSize="30"/>
-                    <TextBlock Foreground="Black" FontWeight="ExtraLight" TextWrapping="Wrap"  Text="{Binding Description}" Height="auto" FontSize="30"  />
-                </StackPanel>
-
-
-                <StackPanel Margin="-12,10,0,0" Background="Gray">
-                    <TextBlock Foreground="Black" Margin="30,0,0,0"  FontWeight="ExtraBold" FontSize="30"  Text="STEPS"/>
-                </StackPanel>
+                    <Image Source="/Assets/video_ph.png" Height="150"   Margin="0,-160,0,0"/>
+                    <StackPanel Orientation="Horizontal" Height="auto">
+                        <TextBlock Text="About: " FontWeight="ExtraBold" Foreground="Black" FontSize="28"/>
+                        <TextBlock Width="350" Foreground="Black" FontWeight="ExtraLight" Text="{Binding Description}" Height="auto" FontSize="25" TextWrapping="Wrap"/>
+                    </StackPanel>
 
 
-                <Grid>
+                    <StackPanel Margin="-12,10,-20,0" Background="Gray">
+                        <TextBlock Foreground="Black" Margin="30,0,0,0"  FontWeight="ExtraBold" FontSize="28"  Text="STEPS"/>
+                    </StackPanel>
 
-                    <ListBox Height="400" Foreground="Black" Name="StepsList" ItemsSource="{Binding Path=Step, Mode=TwoWay}"  >
+
+
+                    <ListBox Foreground="Black" Name="StepsList" ItemsSource="{Binding Path=Step, Mode=TwoWay}"  Height="300" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
+
                                 <StackPanel Background="Orange" Margin="9,7,0,0" >
-                                    <!--<CheckBox Background="LightBlue" Foreground="Black" FontSize="20" Content="{Binding Description}" HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" />-->
-                                    <CheckBox IsChecked="{Binding Done}">
+                                    <CheckBox Background="LightBlue" Foreground="Black" FontSize="20"   HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" >
                                         <CheckBox.Content>
                                             <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
               Style="{StaticResource PhoneTextNormalStyle}"
@@ -92,15 +91,23 @@
                                         </CheckBox.Content>
                                     </CheckBox>
 
-                                </StackPanel>
+                                    <!--<CheckBox IsChecked="{Binding Done}">
+                                        <CheckBox.Content>
+                                            <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
+              Style="{StaticResource PhoneTextNormalStyle}"
+              Foreground="{StaticResource PhoneAccentBrush}" />
+                                        </CheckBox.Content>
+                                    </CheckBox>-->
 
+                                </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
-
                     </ListBox>
-                </Grid>
-            </StackPanel>
-        </Grid>
+
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
     </Grid>
 
 </phone:PhoneApplicationPage>

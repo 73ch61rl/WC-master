@@ -92,6 +92,7 @@
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Common Code and Law" FontSize="35"/>
                     <Button Background="White" Foreground="Red" BorderBrush="Transparent" Content="HELP!" FontSize="35" Margin="0"/>
                 </ListBox>
+                    
             </controls:PanoramaItem>
 
         </controls:Panorama>

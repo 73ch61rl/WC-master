@@ -173,6 +173,7 @@
     <Content Include="Assets\horse_stance.jpg" />
     <Content Include="Assets\palm_heel.jpg" />
     <Content Include="Assets\swing.jpg" />
+    <Content Include="Assets\video_ph.png" />
     <Content Include="Background.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />
     <Content Include="BarIcons\ApplicationBar.Select.png" />
