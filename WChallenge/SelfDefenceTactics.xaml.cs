@@ -33,7 +33,7 @@ namespace WChallenge
     {
         ApplicationBarIconButton select;
         ApplicationBarIconButton add;
-        int width;
+      
 
         public SelfDefenceTactics()
         {
@@ -54,89 +54,46 @@ namespace WChallenge
         }
 
 
+
         void add_Click(object sender, EventArgs e)
         {
+
+            ObservableCollection<TechniqueViewModel> l = new ObservableCollection<TechniqueViewModel>();
+            MessageBox.Show(Convert.ToString(FightList.SelectedItems));
+
             IList source = FightList.ItemsSource as IList;
-            ObservableCollection<TechniqueViewModel> Items = new ObservableCollection<TechniqueViewModel>();
-            if(FightList.SelectedItems.Count > 0)
+
+            while (FightList.SelectedItems.Count > 0)
             {
-                
-                foreach (TechniqueViewModel t in FightList.SelectedItems)
-                { 
-                    Items.Add(t);
-                }
+                source.Remove((TechniqueViewModel)FightList.SelectedItems[0]);
             }
-            SaveInIS(Items);
+
+            // l = (ObservableCollection<TechniqueViewModel>)FightList.SelectedItems;
+
+            SaveInIS(l);
 
             if (FightList.IsSelectionEnabled)
             {
                 FightList.IsSelectionEnabled = false;
                 FightList.Width = FightList.Width + 100;
-               
             }
         }
 
-        class Util
-        {
-            public static void SerializeObjectToXML<T>(T item, string FilePath)
-            {
-                XmlSerializer xs = new XmlSerializer(typeof(T));
-                using (StreamWriter wr = new StreamWriter(FilePath))
-                {
-                    xs.Serialize(wr, item);
-                }
-            }
-        }
+        
 
         private void SaveInIS(ObservableCollection<TechniqueViewModel> items)
         {
             ObservableCollection<TechniqueViewModel> _list = new ObservableCollection<TechniqueViewModel>();
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue<ObservableCollection<TechniqueViewModel>>("UserTactics", out _list);
+            IsolatedStorageSettings.ApplicationSettings.Add("UserTactics", _list);
+            IsolatedStorageSettings.ApplicationSettings.Save();
 
-          
-            //OPens the USerItem xml file 
-            try
-            {
-                using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
-                {
-                    using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("UserItems.xml", FileMode.OpenOrCreate))
-                    {
-                        if (stream.Length > 0)
-                        {
-                            XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
-                            _list = (ObservableCollection<TechniqueViewModel>)serializer.Deserialize(stream);
-                        } 
-                    }
-                }
-            }
-            catch
-            {
-                //MessageBox.Show("nothing in the list");  
+            foreach (TechniqueViewModel t in items) {
+                _list.Add(t);
             }
 
-            foreach(TechniqueViewModel t in items ){
-            _list.Add(t);
-
-            }
-             
-            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
-            xmlWriterSettings.Indent = true;
-            using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
-            {
-
-                using (IsolatedStorageFileStream stream = myIsolatedStorage.OpenFile("UserTactic.xml", FileMode.OpenOrCreate))
-                {
-
-                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<TechniqueViewModel>));
-                    using (XmlWriter xmlWriter = XmlWriter.Create(stream, xmlWriterSettings))
-                    {
-                        
-                            serializer.Serialize(xmlWriter, _list);
-                       
-                    } 
-
-                }
-            } 
-
+            IsolatedStorageSettings.ApplicationSettings.Add("UserTactics", _list);
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
 

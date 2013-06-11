@@ -26,8 +26,9 @@
         <controls:Pivot Foreground="Black" Title="KIAI!" FontWeight="ExtraBold">
             <!--Pivot item one-->
             <controls:PivotItem Header="stories" >
-
-                <ListBox   Margin="0,-100,0,0"  ItemsSource="{Binding Items}"  Name="listboxtweets" Height="500">
+                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                    <ProgressBar IsIndeterminate="True" Visibility="Visible" x:Name="progressBar1" Height="100" Background="{StaticResource PhoneAccentBrush}"/>
+                    <ListBox   Margin="0,0,0,0"  ItemsSource="{Binding Items}"  Name="listboxtweets" Height="900">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
 
@@ -44,7 +45,7 @@
 
                         </DataTemplate>
                     </ListBox.ItemTemplate>
-                </ListBox>
+                </ListBox></StackPanel>
             </controls:PivotItem>
 
             <!--Pivot item two-->

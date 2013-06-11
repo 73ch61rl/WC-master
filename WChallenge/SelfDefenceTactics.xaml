@@ -70,6 +70,7 @@
                                      ItemsSource="{Binding Items, Mode=TwoWay}"
                                      Foreground="Black"
                                      >
+                    
                 <toolkit:MultiselectList.ItemContainerStyle>
                     <Style  TargetType="toolkit:MultiselectItem">
                         <Setter Property="HintPanelHeight" Value="90"/>
@@ -79,7 +80,7 @@
                 
                 <toolkit:MultiselectList.ItemTemplate>
                     <DataTemplate> 
-                        <StackPanel  Background="{StaticResource PhoneAccentBrush}"    Orientation="Horizontal" Margin="0,0,0,20">
+                        <StackPanel    Background="Orange" Orientation="Horizontal" Margin="0,0,0,20">
                             <Image VerticalAlignment="Top" Height="100" Width="100"  Source="{Binding Thumb}" Margin="5,0,9,0"/>
                             
                             <StackPanel Width="311" Height="Auto" Orientation="Vertical">

@@ -123,6 +123,16 @@ namespace WChallenge
 
         }
 
+        private void courseNclass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void header_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            MessageBox.Show("Kiai! (kee-yai) is an app that helps you to memorize self defence tactics that is vital for all to know. The tactics are optimized for females general body index.","About Kiai",MessageBoxButton.OK);
+        }
+
 
 
 

@@ -179,6 +179,7 @@
     <Content Include="Assets\choke_elbow.jpg" />
     <Content Include="Assets\choke_hammer.jpg" />
     <Content Include="Assets\face_punch.jpg" />
+    <Content Include="Assets\header.png" />
     <Content Include="Assets\heels_key_defence.jpg" />
     <Content Include="Assets\horse_stance.jpg" />
     <Content Include="Assets\palm_heel.jpg" />

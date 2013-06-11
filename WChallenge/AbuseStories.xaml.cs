@@ -36,7 +36,7 @@ namespace WChallenge
     {
         public AbuseStories()
         {
-            InitializeComponent();
+            InitializeComponent(); 
 
             WebClient twitter = new WebClient();
             twitter.DownloadStringCompleted += new DownloadStringCompletedEventHandler(twitter_downloadstringCompleted);
@@ -57,6 +57,8 @@ namespace WChallenge
                                             Message = tweet.Element("text").Value,
 
                                         };
+            listboxtweets.Visibility = Visibility.Visible;
+            progressBar1.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -45,7 +45,14 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
         <!--Panorama control-->
-        <controls:Panorama Foreground="Black" Title="KIAI! " Margin="10,0,-10,10">
+        <controls:Panorama Foreground="Black"   x:Name="header"  Margin="10,0,-10,10">
+            <controls:Panorama.Title>
+                <StackPanel Orientation="Vertical" Margin="0,80,0,0">
+                    <Image Tap="header_Tap" x:Name="icon" Source="/Assets/header.png" Height="163" Width="1920"/>
+                   
+                </StackPanel>
+            </controls:Panorama.Title>
+            
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
@@ -58,24 +65,27 @@
                 </StackPanel>-->
                 <StackPanel>
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" 
-                               FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Margin="15,0,0,0"/>
+                               FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-100,0,0"/>
 
-                    <ListBox    Margin="0,0,0,0"  ItemsSource="{Binding RandomTips}" Height="auto" >
+                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   Margin="0,0,0,0"    ItemsSource="{Binding RandomTips}" Height="auto" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Background="White"   Orientation="Horizontal" Margin="0,0,0,0">
+                                <StackPanel    Orientation="Horizontal" Margin="0,0,0,0">
                                     <toolkit:HubTile Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="hubTileRandomTip"
                                          Margin="0,0,0,0"
                                          Source="/kiai.jpg"
                                          Title="{Binding TipName}"
                                          Notification="{Binding TipDescription}"
+                                                     
                                          DisplayNotification="True"
                                           Tap="hub_Tap"
                                          GroupTag="Freeze"
                                          Size="Large"
                                           MouseEnter="Freeze_Over"   
                                           MouseLeave="HubTile_MouseLeave"
-                                                     />
+                                                     >
+                                        
+                                    </toolkit:HubTile>
                                     <!--<TextBlock Text="{Binding TipName}" x:Name="Joo" Foreground="{StaticResource PhoneAccentBrush}" />-->
                                 </StackPanel>
                             </DataTemplate>
@@ -87,40 +97,77 @@
             </controls:PanoramaItem>
             
             
-            <controls:PanoramaItem FontWeight="ExtraBlack"  Header="Learn" >
-               
-                <!--Double line list with image placeholder and text wrapping-->
-                <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
-                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Background="White"   Orientation="Horizontal" Margin="0,0,0,20">
-                                <!--Replace rectangle with image-->
-                                <Image  Opacity="0" Height="100" Width="100"  Source="{Binding Thumb}" Margin="12,0,9,0"  />
-                                <StackPanel Width="311">
-                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="30" Foreground="Black"   Opacity="1"/>
-                                    <Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" Margin="-20,10,0,0"  Opacity="1"/>
-                                    <Rectangle x:Name="redRec"  Fill="{StaticResource PhoneAccentBrush}" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"  Opacity="1"/>
+            <controls:PanoramaItem FontWeight="ExtraBlack"  Header=" " >
+                <Grid>
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="My Tactics" 
+                               FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Margin="15,-100,0,0"/>
+                    <!--Double line list with image placeholder and text wrapping-->
+                    <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="White"   Orientation="Horizontal" Margin="0,0,0,20">
+                                    <!--Replace rectangle with image-->
+                                    <Image  Opacity="0" Height="100" Width="100"  Source="{Binding Thumb}" Margin="12,0,9,0"  />
+                                    <StackPanel Width="311">
+                                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="30" Foreground="Black"   Opacity="1"/>
+                                        <Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" Margin="-20,10,0,0"  Opacity="1"/>
+                                        <Rectangle x:Name="redRec"  Fill="{StaticResource PhoneAccentBrush}" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"  Opacity="1"/>
 
-                                    <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                        <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                    </StackPanel>
                                 </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
             </controls:PanoramaItem>
 
  
 
                 <controls:PanoramaItem Header="">
-                <ListBox Foreground="Bisque" Margin="0,50,0,0">
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Self Defence Tactics" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Safety Tips"  Click="safety_tips_Click_2" FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Stories" Click="abuse_feeds_Click_3" FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Courses and Classes" FontSize="35"/>
-                    <Button Background="White" Foreground="Red" BorderBrush="Transparent" Content="HELP!" FontSize="35" Margin="0"/>
-                </ListBox>
+
+                <toolkit:WrapPanel Margin="0,-30,0,0" >
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Click="fight_manuervers_Button_Click_1"  FontSize="35" Height="200"  Width="200" >
+                        <Button.Content>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="self defence tactics"/>
+                        </Button.Content>
+                    </Button>
+
+
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent"   Click="safety_tips_Click_2" FontSize="35" Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="Safety Tips"/>
+                        </Button.Content>
+                    </Button>
+
+                   
+
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Click="abuse_feeds_Click_3" FontSize="35" Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="stories"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent"   FontSize="35" Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="fight styles"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" x:Name="courseNclass" Click="courseNclass_Click"  FontSize="35" Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="courses and classes"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button Background="Red" Foreground="White"  BorderBrush="Transparent"   FontSize="55"  Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="ExtraBold" Text="HELP!"/>
+                        </Button.Content>
+                    </Button>
                     
+                </toolkit:WrapPanel>
+
             </controls:PanoramaItem>
 
         </controls:Panorama>
