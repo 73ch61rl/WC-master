@@ -1,15 +1,15 @@
-﻿/* *************************************************************************
+﻿/***************************************************************************
  * Class:       MainViewModel.cs
  * Made by:     Jalen Ins team (Maimuna Syed, Olga Shakurova, Irina Smirnova)
  * Country:     Finland
  * Year:        2013
- * ------------------------------------------------------------------------
+ * -------------------------------------------------------------------------
  * Application: KIAI!
  * Description: Self-defence guide for women
  * Competition: Imagine Cup - Women's Athletic App Challenge
  * Category:    Sport
  * 
- ************************************************************************* */
+ ***************************************************************************/
 
 using System;
 using System.ComponentModel;
@@ -102,8 +102,8 @@ namespace WChallenge
               Name = "Face punch", 
               Description = "Learn how to strike to a nose or other face area.",
               VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
-              ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
-              Thumb = new Uri("Assets/face_punch.jpg", UriKind.Relative),
+              ImageLink = new Uri("Assets/Techniques/face_punch.jpg", UriKind.Relative),
+              Thumb = new Uri("Assets/Techniques/face_punch.jpg", UriKind.Relative),
               percentageDone = 0
             });
 
@@ -123,8 +123,8 @@ namespace WChallenge
               Name = "Swing defence",
               Description = "Defending if someone swings at you.",
               VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
-              ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
-              Thumb = new Uri("/Assets/swing.jpg", UriKind.Relative),
+              ImageLink = new Uri("Assets/Techniques/swing.jpg", UriKind.Relative),
+              Thumb = new Uri("Assets/Techniques/swing.jpg", UriKind.Relative),
               percentageDone = 0
 
             });  
@@ -144,8 +144,8 @@ namespace WChallenge
                 Name = "Horse stance",
                 Description = "The basic stance you can meet in all martial arts.",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
-                ImageLink = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
+                ImageLink = new Uri("Assets/Techniques/horse_stance.jpg", UriKind.Relative),
+                Thumb = new Uri("Assets/Techniques/horse_stance.jpg", UriKind.Relative),
                 percentageDone = 0
             });
             
@@ -164,8 +164,8 @@ namespace WChallenge
                 Name = "Palm heel strike in a horse stance",
                 Description = "Practicing palm heel strike being in horse stance",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
-                ImageLink = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
+                ImageLink = new Uri("Assets/Techniques/palm_heel.jpg", UriKind.Relative),
+                Thumb = new Uri("Assets/Techniques/palm_heel.jpg", UriKind.Relative),
                 percentageDone = 0,
                 Step = technic2Steps
             });
@@ -185,8 +185,8 @@ namespace WChallenge
               Name = "Front choke escape with elbow strike",
               Description = "Escaping from a choke",
               VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
-              ImageLink = new Uri("/Assets/choke_elbow.jpg", UriKind.Relative),
-              Thumb = new Uri("/Assets/chokee_elbow.jpg", UriKind.Relative),
+              ImageLink = new Uri("Assets/Techniques/choke_elbow.jpg", UriKind.Relative),
+              Thumb = new Uri("Assets/Techniques/chokee_elbow.jpg", UriKind.Relative),
               percentageDone = 0    
             });
 
@@ -225,9 +225,10 @@ namespace WChallenge
               Id = 6,
               Step = technic4Steps,
               Name = "Basic Kick",
+              Description = "Learn simple kick.",
               VideoLink=new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog"),
-              ImageLink = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
-              Thumb = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
+              ImageLink = new Uri("Assets/Techniques/basic_kick.jpg", UriKind.Relative),
+              Thumb = new Uri("Assets/Techniques/basic_kick.jpg", UriKind.Relative),
               percentageDone = 0
             });
 
@@ -246,8 +247,8 @@ namespace WChallenge
                Name = "Self defence with heels and a keychain",
                Description = "Using objects from your lady bag or shoes for defence in everyday life.",
                VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"),
-               ImageLink = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
-               Thumb = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
+               ImageLink = new Uri("Assets/Techniques/heels_key_defence.jpg", UriKind.Relative),
+               Thumb = new Uri("Assets/Techniques/heels_key_defence.jpg", UriKind.Relative),
                percentageDone = 0 
             });
 

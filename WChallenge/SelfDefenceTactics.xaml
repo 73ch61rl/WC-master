@@ -50,7 +50,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/Background.png">
+            <ImageBrush ImageSource="/Assets/Background.png">
             </ImageBrush>
         </Grid.Background>
         <!--TitlePanel contains the name of the application and page title-->

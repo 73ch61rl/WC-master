@@ -40,7 +40,7 @@
     <Grid x:Name="LayoutRoot" >
       
         <Grid.Background>
-            <ImageBrush ImageSource="/Background.png">
+            <ImageBrush ImageSource="/Assets/Background.png">
             </ImageBrush>
         </Grid.Background>
 

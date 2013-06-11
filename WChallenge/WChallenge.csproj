@@ -172,28 +172,29 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
+    <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\basic_kick.jpg" />
-    <Content Include="Assets\choke_elbow.jpg" />
-    <Content Include="Assets\choke_hammer.jpg" />
-    <Content Include="Assets\face_punch.jpg" />
+    <Content Include="Assets\Techniques\basic_kick.jpg" />
+    <Content Include="Assets\Techniques\choke_elbow.jpg" />
+    <Content Include="Assets\Techniques\choke_hammer.jpg" />
+    <Content Include="Assets\Techniques\face_punch.jpg" />
     <Content Include="Assets\header.png" />
-    <Content Include="Assets\heels_key_defence.jpg" />
-    <Content Include="Assets\horse_stance.jpg" />
-    <Content Include="Assets\palm_heel.jpg" />
-    <Content Include="Assets\swing.jpg" />
+    <Content Include="Assets\Techniques\heels_key_defence.jpg" />
+    <Content Include="Assets\Techniques\horse_stance.jpg" />
+    <Content Include="Assets\Techniques\palm_heel.jpg" />
+    <Content Include="Assets\Techniques\swing.jpg" />
+    <Content Include="Assets\title_kiai.png" />
     <Content Include="Assets\video_ph.png" />
-    <Content Include="Background.png" />
+    <Content Include="Assets\Background.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />
     <Content Include="BarIcons\ApplicationBar.Select.png" />
-    <Content Include="kiai.jpg" />
+    <Content Include="Assets\tile_punch.jpg" />
     <Content Include="Notes.txt" />
-    <Content Include="PanoramaBackground.jpg" />
+    <Content Include="Assets\PanoramaBackground.jpg" />
     <Content Include="README_FIRST.txt" />
-    <Content Include="SplashScreenImage.jpg" />
-    <Content Include="tile.png" />
+    <Content Include="Assets\SplashScreenImage.jpg" />
+    <Content Include="Assets\tile_app.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />

@@ -48,13 +48,13 @@
         <controls:Panorama Foreground="Black"   x:Name="header"  Margin="10,0,-10,10">
             <controls:Panorama.Title>
                 <StackPanel Orientation="Vertical" Margin="0,80,0,0">
-                    <Image Tap="header_Tap" x:Name="icon" Source="/Assets/header.png" Height="163" Width="1920"/>
+                    <Image Tap="header_Tap" x:Name="icon" Source="/Assets/title_kiai.png" Width="1900"/>
                    
                 </StackPanel>
             </controls:Panorama.Title>
             
             <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.jpg"/>
+                <ImageBrush ImageSource="/Assets/PanoramaBackground.jpg"/>
             </controls:Panorama.Background>
 
             <controls:PanoramaItem Header=" ">
@@ -73,7 +73,7 @@
                                 <StackPanel    Orientation="Horizontal" Margin="0,0,0,0">
                                     <toolkit:HubTile Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="hubTileRandomTip"
                                          Margin="0,0,0,0"
-                                         Source="/kiai.jpg"
+                                         Source="/Assets/tile_punch.jpg"
                                          Title="{Binding TipName}"
                                          Notification="{Binding TipDescription}"
                                                      

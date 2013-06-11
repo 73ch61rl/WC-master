@@ -40,14 +40,14 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" >
         <Grid.Background>
-            <ImageBrush ImageSource="/Background.png">
+            <ImageBrush ImageSource="/Assets/Background.png">
             </ImageBrush>
         </Grid.Background>
         
         <!--Pivot Control-->
         <controls:Pivot Title="KIAI!">
             <!--Pivot item one-->
-            <controls:PivotItem Header="Safety tips">
+            <controls:PivotItem Header="safety tips">
 
                 <ListBox ItemsSource="{Binding Tips}" x:Name="ListBoxTips">
                     <ListBox.ItemTemplate>
@@ -75,7 +75,7 @@
             </controls:PivotItem>
 
             <!--Pivot item two-->
-            <controls:PivotItem Header="item2">
+            <controls:PivotItem Header="">
                 <Grid/>
             </controls:PivotItem>
         </controls:Pivot>
