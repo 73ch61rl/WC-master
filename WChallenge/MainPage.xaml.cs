@@ -99,6 +99,30 @@ namespace WChallenge
             NavigationService.Navigate(new Uri("/AbuseStories.xaml", UriKind.Relative));
         }
 
+        private void safety_tips_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Tips.xaml", UriKind.Relative));
+        }
+
+        private void hub_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            HubTile hubTileRandomTip = (HubTile)sender;
+            String title = hubTileRandomTip.Title;
+            String encryptedTitle = HttpUtility.HtmlEncode(title);
+            NavigationService.Navigate(new Uri("/Tips.xaml?Title=" + encryptedTitle, UriKind.Relative));
+        }
+
+        private void Freeze_Over(object sender, MouseEventArgs e)
+        {
+            HubTileService.FreezeGroup("Freeze");
+        }
+
+        private void HubTile_MouseLeave(object sender, MouseEventArgs e)
+        {
+            HubTileService.UnfreezeGroup("Freeze");
+
+        }
+
 
 
 

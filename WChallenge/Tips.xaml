@@ -1,0 +1,84 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WChallenge.Tips"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Background.png">
+            </ImageBrush>
+        </Grid.Background>
+        
+        <!--Pivot Control-->
+        <controls:Pivot Title="KIAI!">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Safety tips">
+
+                <ListBox ItemsSource="{Binding Tips}" x:Name="ListBoxTips">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel   Orientation="Horizontal" Margin="0,0,0,20">
+                                <TextBlock Text="{Binding TipName}" />
+
+                                <!--<toolkit:HubTile Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="hubTileRandomTip"
+                                         Margin="12,12,0,0"
+                                         Source="/tile.png"
+                                         Title="{Binding TipName}"
+                                         Notification="{Binding TipDescription}"
+                                         DisplayNotification="True"
+        
+                                         GroupTag="Freeze"
+                                         Size="Large"
+                                        />-->
+                                <!--<TextBlock Text="{Binding TipName}" x:Name="Joo" Foreground="{StaticResource PhoneAccentBrush}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+
+                </ListBox>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="item2">
+                <Grid/>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

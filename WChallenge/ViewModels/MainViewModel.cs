@@ -27,6 +27,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Microsoft.WindowsAzure.MobileServices;
 using WChallenge;
+using System.Windows.Threading;
 
 
 namespace WChallenge
@@ -38,7 +39,9 @@ namespace WChallenge
         // public ObservableCollection<StepViewModel> Steps { get; private set; }
         public ObservableCollection<StepViewModel> Steps { get; private set; }
         public ObservableCollection<TipViewModel> Tips { get; private set; }
-        public ObservableCollection<TipViewModel> RandomTip { get; private set; }
+        public ObservableCollection<TipViewModel> RandomTips { get; private set; }
+
+        private DispatcherTimer dispatcherTimer;
 
 
 
@@ -47,9 +50,17 @@ namespace WChallenge
             this.Items = new ObservableCollection<TechniqueViewModel>();
             // this.Steps = new ObservableCollection<StepViewModel>();
             this.Tips = new ObservableCollection<TipViewModel>();
-            this.RandomTip = new ObservableCollection<TipViewModel>();
+            this.RandomTips = new ObservableCollection<TipViewModel>();
+            this.dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = TimeSpan.FromSeconds(20);
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Start();
         }
 
+        void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            RandomizeRandomTip();
+        }
 
         private string _sampleProperty = "Sample Runtime Property Value";
         public string SampleProperty
@@ -302,9 +313,7 @@ namespace WChallenge
                 TipDescription = "If you kick someone, kick only their groin, kneecaps or shins to keep a steady balance"
             });
 
-            Random rdm = new Random();
-            this.RandomTip.Add(Tips[rdm.Next(Tips.Count)]);
-
+            RandomizeRandomTip();
 
             ObservableCollection<TechniqueViewModel> Items;
             Items = App.ViewModel.Items;
@@ -322,6 +331,12 @@ namespace WChallenge
             this.IsDataLoaded = true;
         }
 
+        public void RandomizeRandomTip()
+        {
+            Random rdm = new Random();
+            this.RandomTips.Clear();
+            this.RandomTips.Add(Tips[rdm.Next(Tips.Count)]);
+        }
         // public class Item { public int Id { get; set; } public string Text { get; set; } }
 
 

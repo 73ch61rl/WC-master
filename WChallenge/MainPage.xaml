@@ -52,9 +52,36 @@
 
             <controls:PanoramaItem Header=" ">
                 <!--Double line list with text wrapping-->
-                <StackPanel    Margin="0,-100,0,0" >
+                <!--<StackPanel    Margin="0,-100,0,0" >
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap"    Margin="15,0,0,0"/>
                     <TextBlock Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
+                </StackPanel>-->
+                <StackPanel>
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" 
+                               FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Margin="15,0,0,0"/>
+
+                    <ListBox    Margin="0,0,0,0"  ItemsSource="{Binding RandomTips}" Height="auto" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="White"   Orientation="Horizontal" Margin="0,0,0,0">
+                                    <toolkit:HubTile Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="hubTileRandomTip"
+                                         Margin="0,0,0,0"
+                                         Source="/kiai.jpg"
+                                         Title="{Binding TipName}"
+                                         Notification="{Binding TipDescription}"
+                                         DisplayNotification="True"
+                                          Tap="hub_Tap"
+                                         GroupTag="Freeze"
+                                         Size="Large"
+                                          MouseEnter="Freeze_Over"   
+                                          MouseLeave="HubTile_MouseLeave"
+                                                     />
+                                    <!--<TextBlock Text="{Binding TipName}" x:Name="Joo" Foreground="{StaticResource PhoneAccentBrush}" />-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
                 </StackPanel>
 
             </controls:PanoramaItem>
@@ -87,7 +114,7 @@
                 <controls:PanoramaItem Header="">
                 <ListBox Foreground="Bisque" Margin="0,50,0,0">
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Self Defence Tactics" Click="fight_manuervers_Button_Click_1"  FontSize="35"/>
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Safety Tips" FontSize="35"/>
+                    <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Safety Tips"  Click="safety_tips_Click_2" FontSize="35"/>
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Fight styles" FontSize="35"/>
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Stories" Click="abuse_feeds_Click_3" FontSize="35"/>
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" Content="Courses and Classes" FontSize="35"/>

@@ -123,6 +123,9 @@
     <Compile Include="Technique.xaml.cs">
       <DependentUpon>Technique.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tips.xaml.cs">
+      <DependentUpon>Tips.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TwitterItem.cs" />
     <Compile Include="ViewModels\TechniqueViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -158,6 +161,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tips.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -180,6 +187,7 @@
     <Content Include="Background.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />
     <Content Include="BarIcons\ApplicationBar.Select.png" />
+    <Content Include="kiai.jpg" />
     <Content Include="Notes.txt" />
     <Content Include="PanoramaBackground.jpg" />
     <Content Include="README_FIRST.txt" />

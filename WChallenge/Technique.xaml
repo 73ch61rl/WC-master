@@ -82,7 +82,7 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
 
-                                <StackPanel Background="Orange" Margin="9,7,0,0" >
+                                <StackPanel Background="Silver" Margin="9,7,0,0" >
                                     <CheckBox Background="LightBlue" Foreground="Black" FontSize="20"   HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" >
                                         <CheckBox.Content>
                                             <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
