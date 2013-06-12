@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,18 @@ namespace WChallenge
     {
         public int Id { get; set; }
         private string _tipName;
+        private bool isNonExpandable = false;
+
+        public bool IsNonExpandable
+        {
+            get { return isNonExpandable; }
+            set
+            {
+                isNonExpandable = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
         public string TipName
         {
@@ -44,6 +57,12 @@ namespace WChallenge
                     NotifyPropertyChanged();
                 }
             }
+
+        }
+
+        public ObservableCollection<String> TipDescriptions
+        {
+            get { return new ObservableCollection<string>() { TipDescription }; }
         }
 
         // http://msdn.microsoft.com/en-us/library/system.componentmodel.inotifypropertychanged.aspx
@@ -61,6 +80,5 @@ namespace WChallenge
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
     }
 }

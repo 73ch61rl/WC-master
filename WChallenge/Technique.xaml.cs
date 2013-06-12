@@ -53,11 +53,11 @@ namespace WChallenge
  
             if (IsolatedStorageSettings.ApplicationSettings.Contains("UserTechniques"))
             {
-                this.DataContext = ((ObservableCollection<TechniqueViewModel>)IsolatedStorageSettings.ApplicationSettings["UserTechniques"])[techniqueId];
+                this.DataContext = ((ObservableCollection<TechniqueViewModel>)IsolatedStorageSettings.ApplicationSettings["UserTechniques"])[techniqueId-1];
             } 
             else 
             {
-                this.DataContext = Items[techniqueId];
+                this.DataContext = Items[techniqueId-1];
             } 
         } 
         

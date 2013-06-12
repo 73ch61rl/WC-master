@@ -28,7 +28,7 @@ namespace WChallenge
 {
     public partial class Tips : PhoneApplicationPage
     {
-        private TipViewModel selectedTip = null;
+       private TipViewModel selectedTip = null;
         public Tips()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace WChallenge
 
         void Tips_Loaded(object sender, RoutedEventArgs e)
         {
-            ListBoxTips.SelectedItem = selectedTip;
+            //ListBoxTips.SelectedItem = selectedTip;
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {

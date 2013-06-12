@@ -87,76 +87,75 @@ namespace WChallenge
 
 
         public async void LoadData()
-        {   
+        {
             //1 technic - nose punch
-            var technic0Steps = new ObservableCollection<StepViewModel>();
-            technic0Steps.Add(new StepViewModel() { Description="If a stranger grabbed your hand, raise your other hand", Done=false});
-            technic0Steps.Add(new StepViewModel() { Description = "Pull your fingers back", Done = false });
-            technic0Steps.Add(new StepViewModel() { Description = "Strike to a nose", Done = false });
-            technic0Steps.Add(new StepViewModel() { Description = "If the attacker is larger than you try to strike some other sensitive face area", Done = false });
-
-            this.Items.Add(new TechniqueViewModel() 
-            { 
-              Id = 0,
-              Step = technic0Steps,
-              Name = "Face punch", 
-              Description = "Learn how to strike to a nose or other face area.",
-              VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
-              ImageLink = new Uri("Assets/Techniques/face_punch.jpg", UriKind.Relative),
-              Thumb = new Uri("Assets/Techniques/face_punch.jpg", UriKind.Relative),
-              percentageDone = 0
+            this.Items.Add(new TechniqueViewModel()
+            {
+                Id = 1,
+                Step = new ObservableCollection<StepViewModel>() {
+                                        new StepViewModel() { Description="If a stranger grabbed your hand, raise your other hand", Done=false},
+                                        new StepViewModel() { Description = "Pull your fingers back", Done = false },
+                                        new StepViewModel() { Description = "Strike to a nose", Done = false },
+                                        new StepViewModel() { Description = "If the attacker is larger than you try to strike some other sensitive face area", Done = false }
+                            },
+                Name = "Face punch",
+                Description = "Learn how to strike to a nose or other face area.",
+                VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
+                ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
+                Thumb = new Uri("Assets/face_punch.jpg", UriKind.Relative),
+                percentageDone = 0
             });
 
             //2 technic - swing defence
-            var technicSteps = new ObservableCollection<StepViewModel>();
-            technicSteps.Add(new StepViewModel() { Description = "When an arm comes toward you use your forearms to block it putting one hand at a forearm and one hand above the elbow", Done = false });
-            technicSteps.Add(new StepViewModel() { Description = "Wrap your hand around the neck", Done = false });
-            technicSteps.Add(new StepViewModel() { Description = "Pull it down", Done = false });
-            technicSteps.Add(new StepViewModel() { Description = "Grab a wrest", Done = false });
-            technicSteps.Add(new StepViewModel() { Description = "Strike with your knee to a stomach or a groin", Done = false });  
-      
-                 
-            this.Items.Add(new TechniqueViewModel() 
-            { 
-              Id = 2,
-              Step = technicSteps,
-              Name = "Swing defence",
-              Description = "Defending if someone swings at you.",
-              VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
-              ImageLink = new Uri("Assets/Techniques/swing.jpg", UriKind.Relative),
-              Thumb = new Uri("Assets/Techniques/swing.jpg", UriKind.Relative),
-              percentageDone = 0
+            var technic2Steps = new ObservableCollection<StepViewModel>();
+            technic2Steps.Add(new StepViewModel() { Description = "When an arm comes toward you use your forearms to block it putting one hand at a forearm and one hand above the elbow", Done = false });
+            technic2Steps.Add(new StepViewModel() { Description = "Wrap your hand around the neck", Done = false });
+            technic2Steps.Add(new StepViewModel() { Description = "Pull it down", Done = false });
+            technic2Steps.Add(new StepViewModel() { Description = "Grab a wrest", Done = false });
+            technic2Steps.Add(new StepViewModel() { Description = "Strike with your knee to a stomach or a groin", Done = false });
 
-            });  
- 
+
+            this.Items.Add(new TechniqueViewModel()
+            {
+                Id = 2,
+                Step = technic2Steps,
+                Name = "Swing defence",
+                Description = "Defending if someone swings at you.",
+                VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
+                ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/swing.jpg", UriKind.Relative),
+                percentageDone = 0
+
+            });
+
             //3 technic - horse stance
-            var technic1Steps = new ObservableCollection<StepViewModel>();
-            technic1Steps.Add(new StepViewModel() { Description = "Stand with your feet about 2 shoulder widths apart", Done = false });
-            technic1Steps.Add(new StepViewModel() { Description = "Lift heels behind your toes", Done = false });
-            technic1Steps.Add(new StepViewModel() { Description = "Come down, make sure that you keep your feet parallel and your upper body straight and vertical", Done = false });
-            technic1Steps.Add(new StepViewModel() { Description = "Put your fists back next to your side", Done = false });
-            technic1Steps.Add(new StepViewModel() { Description = "If you get a bear hug from behind do not panick, just drop in your horse stance to get free", Done = false });
+            var technic3Steps = new ObservableCollection<StepViewModel>();
+            technic3Steps.Add(new StepViewModel() { Description = "Stand with your feet about 2 shoulder widths apart", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Lift heels behind your toes", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Come down, make sure that you keep your feet parallel and your upper body straight and vertical", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "Put your fists back next to your side", Done = false });
+            technic3Steps.Add(new StepViewModel() { Description = "If you get a bear hug from behind do not panick, just drop in your horse stance to get free", Done = false });
 
             this.Items.Add(new TechniqueViewModel()
             {
                 Id = 3,
-                Step = technic1Steps,
+                Step = technic3Steps,
                 Name = "Horse stance",
                 Description = "The basic stance you can meet in all martial arts.",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
-                ImageLink = new Uri("Assets/Techniques/horse_stance.jpg", UriKind.Relative),
-                Thumb = new Uri("Assets/Techniques/horse_stance.jpg", UriKind.Relative),
+                ImageLink = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
                 percentageDone = 0
             });
-            
+
             //4 technic - palm heel strike to nose in a horse stance
-            var technic2Steps = new ObservableCollection<StepViewModel>();
-            technic2Steps.Add(new StepViewModel() { Description = "Get into a horse stance", Done = false });
-            technic2Steps.Add(new StepViewModel() { Description = "Open your hands", Done = false });
-            technic2Steps.Add(new StepViewModel() { Description = "Push you heels a little forward and pull fingers a little back", Done = false });
-            technic2Steps.Add(new StepViewModel() { Description = "Hit an attacker to the nose with one hand", Done = false });
-            technic2Steps.Add(new StepViewModel() { Description = "Hit with the ohther hand", Done = false });
-          
+            var technic4Steps = new ObservableCollection<StepViewModel>();
+            technic4Steps.Add(new StepViewModel() { Description = "Get into a horse stance", Done = false });
+            technic4Steps.Add(new StepViewModel() { Description = "Open your hands", Done = false });
+            technic4Steps.Add(new StepViewModel() { Description = "Push you heels a little forward and pull fingers a little back", Done = false });
+            technic4Steps.Add(new StepViewModel() { Description = "Hit an attacker to the nose with one hand", Done = false });
+            technic4Steps.Add(new StepViewModel() { Description = "Hit with the ohther hand", Done = false });
+
 
             this.Items.Add(new TechniqueViewModel()
             {
@@ -164,30 +163,30 @@ namespace WChallenge
                 Name = "Palm heel strike in a horse stance",
                 Description = "Practicing palm heel strike being in horse stance",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
-                ImageLink = new Uri("Assets/Techniques/palm_heel.jpg", UriKind.Relative),
-                Thumb = new Uri("Assets/Techniques/palm_heel.jpg", UriKind.Relative),
+                ImageLink = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
                 percentageDone = 0,
-                Step = technic2Steps
+                Step = technic4Steps
             });
 
             //5 technic - front choke escape using elbow strike
-            var technic3Steps = new ObservableCollection<StepViewModel>();
-            technic3Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to push down his elbow", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
-            
-            this.Items.Add(new TechniqueViewModel() 
-            { 
-              Id = 5,
-              Step = technic3Steps,
-              Name = "Front choke escape with elbow strike",
-              Description = "Escaping from a choke",
-              VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
-              ImageLink = new Uri("Assets/Techniques/choke_elbow.jpg", UriKind.Relative),
-              Thumb = new Uri("Assets/Techniques/chokee_elbow.jpg", UriKind.Relative),
-              percentageDone = 0    
+            var technic5Steps = new ObservableCollection<StepViewModel>();
+            technic5Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
+            technic5Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
+            technic5Steps.Add(new StepViewModel() { Description = "Use your elbow to push down his elbow", Done = false });
+            technic5Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
+            technic5Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
+
+            this.Items.Add(new TechniqueViewModel()
+            {
+                Id = 5,
+                Step = technic5Steps,
+                Name = "Front choke escape with elbow strike",
+                Description = "Escaping from a choke",
+                VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
+                ImageLink = new Uri("/Assets/choke_elbow.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/chokee_elbow.jpg", UriKind.Relative),
+                percentageDone = 0
             });
 
             /*//5 technic - front choke release move using hammer strike
@@ -211,45 +210,44 @@ namespace WChallenge
             });*/
 
             //6 technic - basic kick
-            var technic4Steps = new ObservableCollection<StepViewModel>();
-            technic4Steps.Add(new StepViewModel() { Description = "Spread your feet apart.", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Bend your knees.", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Take your hands back.", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Lift your knee.", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Extend your leg.", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Bring your knee back..", Done = false });
-            technic4Steps.Add(new StepViewModel() { Description = "Come down.", Done = false });
+            var technic6Steps = new ObservableCollection<StepViewModel>();
+            technic6Steps.Add(new StepViewModel() { Description = "Spread your feet apart.", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Bend your knees.", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Take your hands back.", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Lift your knee.", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Extend your leg.", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Bring your knee back..", Done = false });
+            technic6Steps.Add(new StepViewModel() { Description = "Come down.", Done = false });
 
             this.Items.Add(new TechniqueViewModel()
-            { 
-              Id = 6,
-              Step = technic4Steps,
-              Name = "Basic Kick",
-              Description = "Learn simple kick.",
-              VideoLink=new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog"),
-              ImageLink = new Uri("Assets/Techniques/basic_kick.jpg", UriKind.Relative),
-              Thumb = new Uri("Assets/Techniques/basic_kick.jpg", UriKind.Relative),
-              percentageDone = 0
+            {
+                Id = 6,
+                Step = technic6Steps,
+                Name = "Basic Kick",
+                VideoLink = new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog"),
+                ImageLink = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
+                percentageDone = 0
             });
 
             //7 technic - defence with high heels and keys
-            var technic5Steps = new ObservableCollection<StepViewModel>();
-            technic5Steps.Add(new StepViewModel() { Description = "Take your shoes off.", Done = false });
-            technic5Steps.Add(new StepViewModel() { Description = "Put  the shoe on your hand to protect yourself around your wrist", Done = false });
-            technic5Steps.Add(new StepViewModel() { Description = "Turn the shoe around and use it with your hammer strike (to the eye, groin)", Done = false });
-            technic5Steps.Add(new StepViewModel() { Description = "Before going to your car always take your keys out of the purse, so that you are not fumbling for them", Done = false });
-            technic5Steps.Add(new StepViewModel() { Description = "Carry a pepper spray on your keychain and in case of an attack shoot at a safe distance", Done = false });
+            var technic7Steps = new ObservableCollection<StepViewModel>();
+            technic7Steps.Add(new StepViewModel() { Description = "Take your shoes off.", Done = false });
+            technic7Steps.Add(new StepViewModel() { Description = "Put  the shoe on your hand to protect yourself around your wrist", Done = false });
+            technic7Steps.Add(new StepViewModel() { Description = "Turn the shoe around and use it with your hammer strike (to the eye, groin)", Done = false });
+            technic7Steps.Add(new StepViewModel() { Description = "Before going to your car always take your keys out of the purse, so that you are not fumbling for them", Done = false });
+            technic7Steps.Add(new StepViewModel() { Description = "Carry a pepper spray on your keychain and in case of an attack shoot at a safe distance", Done = false });
 
             this.Items.Add(new TechniqueViewModel()
-            { 
-               Id = 7,
-               Step = technic5Steps,
-               Name = "Self defence with heels and a keychain",
-               Description = "Using objects from your lady bag or shoes for defence in everyday life.",
-               VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"),
-               ImageLink = new Uri("Assets/Techniques/heels_key_defence.jpg", UriKind.Relative),
-               Thumb = new Uri("Assets/Techniques/heels_key_defence.jpg", UriKind.Relative),
-               percentageDone = 0 
+            {
+                Id = 7,
+                Step = technic7Steps,
+                Name = "Self defence with heels and a keychain",
+                Description = "Using objects from your lady bag or shoes for defence in everyday life.",
+                VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"),
+                ImageLink = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
+                percentageDone = 0
             });
 
             //Safety tips

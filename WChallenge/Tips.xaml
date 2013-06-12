@@ -45,33 +45,78 @@
         </Grid.Background>
         
         <!--Pivot Control-->
-        <controls:Pivot Title="KIAI!">
+        <controls:Pivot Title="KIAI!" Foreground="Black">
             <!--Pivot item one-->
             <controls:PivotItem Header="safety tips">
 
-                <ListBox ItemsSource="{Binding Tips}" x:Name="ListBoxTips">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel   Orientation="Horizontal" Margin="0,0,0,20">
-                                <TextBlock Text="{Binding TipName}" />
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding Tips}" x:Name="ListBoxTips" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,20">-->
+                                <!--<TextBlock Text="{Binding TipName}" />-->
+                                <toolkit:ExpanderView Margin="0,0,0,8" 
+                                                Header="{Binding}"
+                                                Expander="{Binding}"
+                                                ItemsSource="{Binding TipDescriptions}"
+                                                IsNonExpandable="{Binding IsNonExpandable}"
+                                                Background="White"      >
+                                    <!--Header-->
+                                    <!--Expander="{Binding}"-->
 
-                                <!--<toolkit:HubTile Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="hubTileRandomTip"
-                                         Margin="12,12,0,0"
-                                         Source="/tile.png"
-                                         Title="{Binding TipName}"
-                                         Notification="{Binding TipDescription}"
-                                         DisplayNotification="True"
-        
-                                         GroupTag="Freeze"
-                                         Size="Large"
-                                        />-->
-                                <!--<TextBlock Text="{Binding TipName}" x:Name="Joo" Foreground="{StaticResource PhoneAccentBrush}" />-->
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                                    <toolkit:ExpanderView.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding TipName}"
+                                               Margin="8,8,8,8"
+                                               Foreground="{StaticResource PhoneAccentBrush}"
+                                               FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
+                                               FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.HeaderTemplate>
+
+                                    <toolkit:ExpanderView.ExpanderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Grid.Row="0" Grid.Column="1"
+                                               LineHeight="25" LineStackingStrategy="BlockLineHeight"
+                                               TextWrapping="Wrap" Text="Click for more..."
+                                                   Margin="8,8,8,8"
+                                                Foreground="Black"/>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.ExpanderTemplate>
+
+                                    <toolkit:ExpanderView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock toolkit:TiltEffect.IsTiltEnabled="True" Text="{Binding}"       
+                                                   Margin="0,8,0,-4"
+                                                   Foreground="Black"
+                                                   FontSize="{StaticResource PhoneFontSizeLarge}" 
+                                                   FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                                                   TextWrapping="Wrap"/>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.ItemTemplate>
 
 
-                </ListBox>
+                                    <!-- The NonExpandableHeaderTemplate describes the non-expandable case.
+                                 In the sample, it's the StackPanel for "Adriana Giorgi", 
+                                 the subject, and first line of her email.-->
+                                    <toolkit:ExpanderView.NonExpandableHeaderTemplate>
+                                        <DataTemplate>
+                                            <StackPanel toolkit:TiltEffect.IsTiltEnabled="True">
+                                                <TextBlock Text="Non-expandable"       
+                                                   Margin="0,8,0,-4"
+                                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                                   FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
+                                                   FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.NonExpandableHeaderTemplate>
+
+
+                                </toolkit:ExpanderView>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </controls:PivotItem>
 
             <!--Pivot item two-->
