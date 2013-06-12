@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CharacterProgressControl</id>
+    <version>1.0.0</version>
+    <title>Character Progress Control</title>
+    <authors>DPatra</authors>
+    <owners>DPatra</owners>
+    <licenseUrl>http://metroprogresscontrol.codeplex.com/license</licenseUrl>
+    <projectUrl>http://metroprogresscontrol.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Metro Character Progress Control
+
+The Progress Control could be used in following platforms:
+
+Windows 8 (WinRT)
+Windows Phone 8 (WP8)
+Silverlight 5 (SL5)
+WPF (WPF4.5)</description>
+    <releaseNotes />
+    <language>en-US</language>
+    <tags>Progress Control WinRT WPF SL5 Silverlight WP8 WindowsPhone8</tags>
+  </metadata>
+</package>

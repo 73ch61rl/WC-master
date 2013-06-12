@@ -60,6 +60,7 @@ namespace WChallenge
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+           
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData(); 
@@ -148,6 +149,8 @@ namespace WChallenge
 
             NavigationService.Navigate(new Uri("/Settings.xaml", UriKind.Relative));
         }
+        
+ 
 
 
 

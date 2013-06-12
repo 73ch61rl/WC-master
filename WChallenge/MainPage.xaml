@@ -1,4 +1,5 @@
-﻿<phone:PhoneApplicationPage 
+﻿ <!--xmlns:progress="clr-namespace:CharacterProgressControl.WP8;assembly=CharacterProgressControl"-->
+    <phone:PhoneApplicationPage 
     x:Class="WChallenge.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,6 +9,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
      xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+        xmlns:progress="clr-namespace:CharacterProgressControl.WP8;assembly=CharacterProgressControl"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -47,7 +49,7 @@
         <!--Panorama control-->
         <controls:Panorama Foreground="Black"   x:Name="header"  Margin="10,0,-10,10">
             <controls:Panorama.Title>
-                <StackPanel Orientation="Vertical" Margin="0,80,0,0">
+                <StackPanel Orientation="Vertical" Margin="0,40,0,0">
                     <Image Tap="header_Tap" x:Name="icon" Source="/Assets/title_kiai.png" Width="1900"/>
                    
                 </StackPanel>
@@ -68,7 +70,7 @@
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-100,0,0"/>
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="know?"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-40,0,0"/>
-
+                   
                     <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   Margin="0,0,0,0"    ItemsSource="{Binding RandomTips}" Height="auto" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -108,22 +110,39 @@
                     <ListBox  x:Name="TechnicListBox" Margin="0,0,-12,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Background="White"   Orientation="Horizontal" Margin="0,0,0,20">
-                                    <!--Replace rectangle with image-->
-                                    <Image  Opacity="0" Height="100" Width="100"  Source="{Binding Thumb}" Margin="12,0,9,0"  />
-                                    <StackPanel Width="311">
-                                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontSize="30" Foreground="Black"   Opacity="1"/>
-                                        <!--<Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" Margin="-20,10,0,0"  Opacity="1"/>
-                                        <Rectangle x:Name="redRec"  Fill="{StaticResource PhoneAccentBrush}" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"  Opacity="1"/>-->
-                                        <StackPanel>
-                                            <Slider Background="LightGray" Foreground="DarkGray" Minimum="0" Maximum="100" x:Name="slider" Value="{Binding percentageDone, Mode=OneWay}" IsEnabled="False" />
-                                            <TextBlock Foreground="Black" Text="{Binding Path=Value, ElementName=slider, StringFormat='\{0}\%'}" />
+                                <toolkit:WrapPanel>
+                                     
+                                        <!--#E1DCE0-->
+                                        <StackPanel Width="350" Margin="50,20,0,10" Background="White" Height="150" Orientation="Horizontal">
+
+                                        <Image  Opacity="0" Height="100" Width="100"  Source="/Assets/title_kiai.png" Margin="12,0,9,0"  />
+                                        
+<progress:CProgressControl  x:Name="pc" Minimum="0" Margin="-20,10,0,0"
+             Maximum="100" 
+              BorderBrush="Black"
+              Foreground="Red" Background="White" 
+             DisplayOption="WomanType1"
+             TextForeground="Black"
+             Width="70"
+              Height="150"
+             Value="40" />
+                                        <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="20,0,0,0">
+                                           
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap" FontSize="20" Foreground="Black" Margin="10,15,0,0" Width='150'  />
                                         </StackPanel>
 
-
-                                        <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
                                     </StackPanel>
-                                </StackPanel>
+
+                                    <!--<Rectangle   Width="260" Height="15" StrokeThickness="2" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" Margin="-20,10,0,0"  Opacity="1"/>
+                                        <Rectangle x:Name="redRec"  Fill="{StaticResource PhoneAccentBrush}" Width="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" HorizontalAlignment="Left" Height="5" Margin="20,-15,154,0"  Opacity="1"/>-->
+                                         
+                                            <!--<Slider Background="LightGray" Foreground="DarkGray" Minimum="0" Maximum="100" x:Name="slider" Value="{Binding percentageDone, Mode=OneWay}" IsEnabled="False" />-->
+                                            <!--<TextBlock Foreground="Black" Text="{Binding Path=Value, ElementName=slider, StringFormat='\{0}\%'}" />-->
+                                      
+
+
+                                    <!--<TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+                                </toolkit:WrapPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
@@ -170,7 +189,7 @@
                     </Button>
                     
 
-                    <Button x:Name="help" Click="help_Click"  Background="Red" Foreground="White"  BorderBrush="Transparent"   FontSize="55"  Height="200" Width="200">
+                    <Button x:Name="help" Click="help_Click"  Background="Red" Foreground="White"  BorderBrush="Transparent"   FontSize="50"  Height="200" Width="200">
                         <Button.Content>
                             <TextBlock Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="ExtraBold" Text="HELP!"   />
                         </Button.Content>
