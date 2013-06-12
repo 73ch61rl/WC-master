@@ -20,9 +20,7 @@
             <ImageBrush ImageSource="/Assets/Background.png"/>
         </Grid.Background>
         <!--Pivot Control-->
-     
-
-        
+      
         <controls:Pivot Foreground="Black" Title="KIAI!" FontWeight="ExtraBold">
             <!--Pivot item one-->
             <controls:PivotItem Header="stories" >
@@ -51,8 +49,8 @@
             <!--Pivot item two-->
             <controls:PivotItem Header="share yours">
                 <StackPanel>
-                    <ListBox Background="Coral">
-                        <TextBlock x:Name="storiesTB" Height="400">
+                    <ListBox Background="Transparent">
+                        <TextBlock x:Name="storiesTB" Height="400" Text="Amanda>">
                          </TextBlock>
                     </ListBox>
                 <TextBox TextWrapping="Wrap" x:Name="typeTxtB" Height="200" > </TextBox>

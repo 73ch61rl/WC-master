@@ -41,7 +41,7 @@ namespace WChallenge
             WebClient twitter = new WebClient();
             twitter.DownloadStringCompleted += new DownloadStringCompletedEventHandler(twitter_downloadstringCompleted);
             twitter.DownloadStringAsync(new Uri("http://api.twitter.com/1/statuses/user_timeline.xml?screen_name=" + "defenseforwomen"));
-
+             
         }
 
         private void twitter_downloadstringCompleted(object sender, DownloadStringCompletedEventArgs e)

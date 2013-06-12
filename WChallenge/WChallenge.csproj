@@ -110,8 +110,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FightStyles.xaml.cs">
-      <DependentUpon>FightStyles.xaml</DependentUpon>
+    <Compile Include="FightNCourses.xaml.cs">
+      <DependentUpon>FightNCourses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HELP.xaml.cs">
+      <DependentUpon>HELP.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelfDefenceTactics.xaml.cs">
       <DependentUpon>SelfDefenceTactics.xaml</DependentUpon>
@@ -120,6 +123,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Technique.xaml.cs">
       <DependentUpon>Technique.xaml</DependentUpon>
     </Compile>
@@ -141,7 +147,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FightStyles.xaml">
+    <Page Include="FightNCourses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HELP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Technique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +189,7 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\gear.png" />
     <Content Include="Assets\Techniques\basic_kick.jpg" />
     <Content Include="Assets\Techniques\choke_elbow.jpg" />
     <Content Include="Assets\Techniques\choke_hammer.jpg" />
@@ -185,6 +200,10 @@
     <Content Include="Assets\Techniques\palm_heel.jpg" />
     <Content Include="Assets\Techniques\swing.jpg" />
     <Content Include="Assets\title_kiai.png" />
+    <Content Include="Assets\Types\type_athletic.png" />
+    <Content Include="Assets\Types\type_curvy.png" />
+    <Content Include="Assets\Types\type_pear.png" />
+    <Content Include="Assets\Types\type_straight.png" />
     <Content Include="Assets\video_ph.png" />
     <Content Include="Assets\Background.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />

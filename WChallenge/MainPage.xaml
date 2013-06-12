@@ -64,8 +64,10 @@
                     <TextBlock Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
                 </StackPanel>-->
                 <StackPanel>
-                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you know?" 
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-100,0,0"/>
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="know?"   
+                               FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-40,0,0"/>
 
                     <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   Margin="0,0,0,0"    ItemsSource="{Binding RandomTips}" Height="auto" >
                         <ListBox.ItemTemplate>
@@ -92,6 +94,7 @@
                         </ListBox.ItemTemplate>
 
                     </ListBox>
+                    
                 </StackPanel>
 
             </controls:PanoramaItem>
@@ -153,21 +156,23 @@
                         </Button.Content>
                     </Button>
 
-                    <Button Background="White" Foreground="Black" BorderBrush="Transparent"   FontSize="35" Height="200" Width="200">
-                        <Button.Content>
-                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="fight styles"/>
-                        </Button.Content>
-                    </Button>
 
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" x:Name="courseNclass" Click="courseNclass_Click"  FontSize="35" Height="200" Width="200">
                         <Button.Content>
-                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="courses and classes"/>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="more info and classes"/>
                         </Button.Content>
                     </Button>
 
-                    <Button Background="Red" Foreground="White"  BorderBrush="Transparent"   FontSize="55"  Height="200" Width="200">
+                    <Button x:Name="settings" Click="settings_Click" Background="White" Foreground="Black" BorderBrush="Transparent"   FontSize="35" Height="200" Width="200">
                         <Button.Content>
-                            <TextBlock Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="ExtraBold" Text="HELP!"/>
+                            <Image Tap="settinsTap_Tap" Source="/Assets/gear.png"/>
+                        </Button.Content>
+                    </Button>
+                    
+
+                    <Button x:Name="help" Click="help_Click"  Background="Red" Foreground="White"  BorderBrush="Transparent"   FontSize="55"  Height="200" Width="200">
+                        <Button.Content>
+                            <TextBlock Foreground="White" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="ExtraBold" Text="HELP!"   />
                         </Button.Content>
                     </Button>
                     
