@@ -40,6 +40,7 @@ namespace WChallenge
         public ObservableCollection<StepViewModel> Steps { get; private set; }
         public ObservableCollection<TipViewModel> Tips { get; private set; }
         public ObservableCollection<TipViewModel> RandomTips { get; private set; }
+        public ObservableCollection<FightStyle> FightStyles { get; private set; }
 
         private DispatcherTimer dispatcherTimer;
 
@@ -51,6 +52,7 @@ namespace WChallenge
             // this.Steps = new ObservableCollection<StepViewModel>();
             this.Tips = new ObservableCollection<TipViewModel>();
             this.RandomTips = new ObservableCollection<TipViewModel>();
+            this.FightStyles = new ObservableCollection<FightStyle>();
             this.dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromSeconds(20);
             dispatcherTimer.Tick += dispatcherTimer_Tick;
@@ -267,8 +269,8 @@ namespace WChallenge
             //3
             this.Tips.Add(new TipViewModel()
             {
-                TipName = "Train",
-                TipDescription = "Once the body starts dumping adrenaline into your system, all your analytical thinking and motor skills are gone. All you're left with is any repetitive training your body has learned"
+                TipName = "Train repetitively",
+                TipDescription = "Once the body starts dumping adrenaline into your system, all your analytical thinking and motor skills are gone"
             });
             //4
             this.Tips.Add(new TipViewModel()
@@ -292,7 +294,7 @@ namespace WChallenge
             this.Tips.Add(new TipViewModel()
             {
                 TipName = "React!",
-                TipDescription = "The optimum time to react is in the first 20 seconds when the body releases chemicals in the blood that help to put up a fight. Be cautious if he has a weapon"
+                TipDescription = "The optimum time to react is in the first 20 seconds when the body releases chemicals in the blood that help to put up a fight"
             });
             //8
             this.Tips.Add(new TipViewModel()
@@ -304,7 +306,7 @@ namespace WChallenge
             this.Tips.Add(new TipViewModel()
             {
                 TipName = "Low stances",
-                TipDescription = "Low stances, most often seen in traditional karate and in northern styles of Chinese boxing, are very helpful in self-defense but only if understood and practiced well"
+                TipDescription = "Low stances, most often seen in traditional karate and in Chinese boxing, are very helpful in self-defence"
             });
             //10
             this.Tips.Add(new TipViewModel()
@@ -312,6 +314,60 @@ namespace WChallenge
                 TipName = "Kick smart",
                 TipDescription = "If you kick someone, kick only their groin, kneecaps or shins to keep a steady balance"
             });
+
+            //FightStyles
+
+
+            //this.FightStyles.Add(new FightStyle()
+            //{
+            //    FightStyleName ="",
+            //    FightStyleDesc ="",
+            //    FightStyleLink = 
+            //});
+            //1
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Karate",
+                FightStyleDesc = "One of the oldest forms of Oriental martial arts, is a self-defence technique that is popular among the women folk. It helps improving body contours and builds a strong personality. Karate does not involve use of weapons and uses strikes and kicks that are inflicted upon the pressure points of opponents. Karate is one of the good martial arts for women that helps in making an individual practicing it, become alert mentally and physically. That's something all women need to be alert and to watch out for possible evil advances and intentions. Karate also strengthens the body and builds hand and eye coordination",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+            //2
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Taekwondo",
+                FightStyleDesc = "Taekwondo is a Korean martial art and means 'to strike or break with foot'. This national sport of South Korea is one of the best and most popular martial arts for women. It is a combination of self-defense, exercise, sport, meditation, and philosophy. It helps women use their entire body and increases natural physical strength. It also strengthens the arms, hips, and core. This martial art style uses a lot of kicks (that are quite damaging) and hence can help women in combating the strength of their attacker",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+            //3
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Jiu Jitsu",
+                FightStyleDesc = "Jiu Jitsu is a Brazilian sport that helps women become physically strong and aggressive. It is a perfect defense art for the physically weak. When a woman gets attacked, her attacker mostly wants to pin her to the ground and control her movements. In such cases, when women cannot blow kicks and punches, Jiu Jitsu is the best martial arts. Jiu Jitsu lets women learn the methods of escape, control, hold and get away from the attacker when on the ground. It helps women get away from larger or stronger attackers using principles of leverage and angels. The Jiu Jitsu teaches women what to do if someone is on top of them and how to get away with fast movements",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+            //4
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Akido",
+                FightStyleDesc = "Akido is another good martial arts style for women looking for self-defence. It does not rely on physical strength. The basic movements of Akido techniques help in strengthening the core muscles and increased lower body strength. It also helps in increasing stamina and over-all muscle tone",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+            //5
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Wing Chun",
+                FightStyleDesc = "This is a Chinese martial arts style for women and designed by women. Wing Chung has explosive short moves and is developed for close range fighting. Thus, people of shorter stature are at an advantage when practicing Wing Chun. It helps teach how to deliver an attack to the opponent and to endure an attack from the attacker. The principle philosophy of this martial arts states, 'You may hit me, but my punch is going to hurt more.' It is one of the best martial arts for women, who have smaller bodies and a bony structure",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+
+            //6
+            this.FightStyles.Add(new FightStyle()
+            {
+                FightStyleName = "Krav Maga",
+                FightStyleDesc = "This is an Israeli martial arts style for women and helps women gear up for self-defense and hand-to-hand combat. Krav Maga helps women defend themselves in case of attempt to rape, fighting with one arm held behind your back and fighting someone with a weapon. It is designed to suit any street or combat situation and this highly aerobic style helps women continue fighting, till they are safe or have totally incapacitated their opponent.",
+                FightStyleLink = new Uri("http://en.wikipedia.org/wiki/Karate")
+            });
+
 
             RandomizeRandomTip();
 

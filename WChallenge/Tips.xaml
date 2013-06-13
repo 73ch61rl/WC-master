@@ -50,12 +50,12 @@
             <controls:PivotItem Header="safety tips">
 
                 <ScrollViewer>
-                    <ListBox ItemsSource="{Binding Tips}" x:Name="ListBoxTips"  >
-                        <ListBox.ItemTemplate>
+                    <ItemsControl ItemsSource="{Binding Tips}" x:Name="ListBoxTips"  >
+                        <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,20">-->
                                 <!--<TextBlock Text="{Binding TipName}" />-->
-                                <StackPanel    Background="White" Width="450" Height="Auto" Orientation="Vertical" Margin="0,0,0,20" Opacity="0.7">
+                                <StackPanel    Background="White" Width="450" Height="Auto" Orientation="Vertical" Margin="0,0,0,20">
                                     <toolkit:ExpanderView Margin="8,8,8,8" 
                                                 Header="{Binding}"
                                                 Expander="{Binding}"
@@ -114,8 +114,8 @@
                                     </toolkit:ExpanderView>
                                 </StackPanel>
                             </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </controls:PivotItem>
 

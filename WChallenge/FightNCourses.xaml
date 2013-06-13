@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
@@ -12,7 +13,29 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="Black"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot"  >
@@ -20,11 +43,93 @@
             <ImageBrush ImageSource="/Assets/Background.png"/>
         </Grid.Background>
         <!--Pivot Control-->
-        
-        <controls:Pivot Foreground="Black" Title="MY APPLICATION">
+
+        <controls:Pivot Foreground="Black" Title="KIAI">
             <!--Pivot item one-->
-            <controls:PivotItem Header="Fight Styles">
-                <Grid/>
+            <controls:PivotItem Header="fight styles">
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding FightStyles}" x:Name="ListBoxFightStyles"  >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,20">-->
+                                <!--<TextBlock Text="{Binding TipName}" />-->
+                                <StackPanel    Background="White" Width="450" Height="Auto" Orientation="Vertical" Margin="0,0,0,20">
+                                    <toolkit:ExpanderView Margin="8,8,8,8" 
+                                                Header="{Binding}"
+                                                Expander="{Binding}"
+                                                ItemsSource="{Binding FightStyleAsCollection}"
+                                                IsNonExpandable="{Binding IsNonExpandable}"
+                                                >
+
+                                        <!--Header-->
+                                        <!--Expander="{Binding}"-->
+                                        <toolkit:ExpanderView.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding FightStyleName}"
+                                               Margin="8,8,8,8"
+                                               Foreground="{StaticResource PhoneAccentBrush}"
+                                               FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
+                                               FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
+                                            </DataTemplate>
+                                        </toolkit:ExpanderView.HeaderTemplate>
+
+                                        <toolkit:ExpanderView.ExpanderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Grid.Row="0" Grid.Column="1"
+                                               LineHeight="25" LineStackingStrategy="BlockLineHeight"
+                                               TextWrapping="Wrap" Text="Click for more..."
+                                                   Margin="8,8,8,8"
+                                                Foreground="Black"/>
+                                            </DataTemplate>
+                                        </toolkit:ExpanderView.ExpanderTemplate>
+
+                                        <toolkit:ExpanderView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ListBoxItem toolkit:TiltEffect.IsTiltEnabled="True">
+                                                    <StackPanel>
+                                                        <TextBlock Text="{Binding FightStyleDesc}"       
+                                                   Margin="0,8,0,-4"
+                                                   Foreground="Black"
+                                                   FontSize="{StaticResource PhoneFontSizeLarge}" 
+                                                   FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                                                   TextWrapping="Wrap"/>
+                                                        <TextBlock Text="{Binding FightStyleLink}"       
+                                                   Margin="0,8,0,-4"
+                                                   Foreground="Black"
+                                                   FontSize="{StaticResource PhoneFontSizeLarge}" 
+                                                   FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                                                   TextWrapping="Wrap"
+                                                   x:Name="linkTextBlock" 
+                                                   Tap="linkTextBlock_Tap"
+                                                    />
+
+
+                                                    </StackPanel>
+                                                </ListBoxItem>
+                                            </DataTemplate>
+                                        </toolkit:ExpanderView.ItemTemplate>
+
+
+                                        <!-- The NonExpandableHeaderTemplate describes the non-expandable case.
+                                 In the sample, it's the StackPanel for "Adriana Giorgi", 
+                                 the subject, and first line of her email.-->
+                                        <toolkit:ExpanderView.NonExpandableHeaderTemplate>
+                                            <DataTemplate>
+                                                <StackPanel toolkit:TiltEffect.IsTiltEnabled="True">
+                                                    <TextBlock Text="Non-expandable"       
+                                                   Margin="0,8,0,-4"
+                                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                                   FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
+                                                   FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </toolkit:ExpanderView.NonExpandableHeaderTemplate>
+                                    </toolkit:ExpanderView>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </controls:PivotItem>
 
             <!--Pivot item two-->

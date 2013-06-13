@@ -18,6 +18,16 @@ namespace WChallenge
         public FightNCourses()
         {
             InitializeComponent();
+            this.DataContext = App.ViewModel;
+        }
+
+
+        private void linkTextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            TextBlock linkTextBlock = (TextBlock)sender;
+            String linkString = linkTextBlock.Text;
+            String encryptedLink = HttpUtility.HtmlEncode(linkString);
+            NavigationService.Navigate(new Uri("/BrowserPage.xaml?EncryptedLink=" + encryptedLink, UriKind.Relative));
         }
     }
 }

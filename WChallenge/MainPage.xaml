@@ -8,17 +8,17 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-        xmlns:progress="clr-namespace:CharacterProgressControl.WP8;assembly=CharacterProgressControl"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:progress="clr-namespace:CharacterProgressControl.WP8;assembly=CharacterProgressControl"
+    xmlns:local="clr-namespace:WChallenge"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False"
-    toolkit:TiltEffect.IsTiltEnabled="True">
-
+    toolkit:TiltEffect.IsTiltEnabled="True"><!--d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"-->
+    
 
     <!--Transitions-->
     <toolkit:TransitionService.NavigationInTransition>
@@ -45,6 +45,9 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.Resources>
+            <local:RandomTipConverter x:Key="randomTipConverter" />
+        </Grid.Resources>
 
         <!--Panorama control-->
         <controls:Panorama Foreground="Black"   x:Name="header"  Margin="10,0,-10,10">
@@ -66,9 +69,9 @@
                     <TextBlock Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
                 </StackPanel>-->
                 <StackPanel>
-                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Did you"   
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Safety"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-100,0,0"/>
-                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="know?"   
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="tip"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-40,0,0"/>
 
                     <ListBox ScrollViewer.VerticalScrollBarVisibility="Disabled"   Margin="0,0,0,0"    ItemsSource="{Binding RandomTips}" Height="auto" >
@@ -79,7 +82,7 @@
                                          Margin="0,0,0,0"
                                          Source="/Assets/tile_punch.jpg"
                                          Title="{Binding TipName}"
-                                         Notification="{Binding TipDescription}"
+                                         Notification="{Binding TipDescription, Mode=OneWay, Converter={StaticResource randomTipConverter}}"
                                                      
                                          DisplayNotification="True"
                                           Tap="hub_Tap"
@@ -178,7 +181,7 @@
 
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent" x:Name="courseNclass" Click="courseNclass_Click"  FontSize="35" Height="200" Width="200">
                         <Button.Content>
-                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="more info and classes"/>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="more info and classes" />
                         </Button.Content>
                     </Button>
 

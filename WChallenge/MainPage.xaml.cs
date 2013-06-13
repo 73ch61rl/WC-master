@@ -126,7 +126,7 @@ namespace WChallenge
 
         private void courseNclass_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/FightNCourses.xaml", UriKind.Relative));
         }
 
         private void header_Tap(object sender, System.Windows.Input.GestureEventArgs e)
