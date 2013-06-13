@@ -144,7 +144,7 @@
 
                     <Button Background="White" Foreground="Black" BorderBrush="Transparent"   Click="safety_tips_Click_2" FontSize="35" Height="200" Width="200">
                         <Button.Content>
-                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="Safety Tips"/>
+                            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" Text="safety Tips"/>
                         </Button.Content>
                     </Button>
 
