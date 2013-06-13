@@ -185,29 +185,9 @@ namespace WChallenge
                 Description = "Escaping from a choke",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
                 ImageLink = new Uri("/Assets/choke_elbow.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/Techniques/chokee_elbow.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/choke_elbow.jpg", UriKind.Relative),
                 percentageDone = 0
             });
-
-            /*//5 technic - front choke release move using hammer strike
-            var technic3Steps = new ObservableCollection<StepViewModel>();
-            technic3Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to push down his elbow", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
-            technic3Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
-
-            this.Items.Add(new TechniqueViewModel()
-            {
-                Id = 5,
-                Step = technic3Steps,
-                Name = "Choke Escape",
-                Description = "Escaping from a choke",
-                VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
-                ImageLink = new Uri("http://goo.gl/zDsV3"),
-                Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
-                percentageDone = 0
-            });*/
 
             //6 technic - basic kick
             var technic6Steps = new ObservableCollection<StepViewModel>();
@@ -250,6 +230,25 @@ namespace WChallenge
                 percentageDone = 0
             });
 
+            /*//8 technic - front choke release move using hammer strike
+            var technic8Steps = new ObservableCollection<StepViewModel>();
+            technic8Steps.Add(new StepViewModel() { Description = "If an attacker has his hands around your neck bring your left hand over his hand.", Done = false });
+            technic8Steps.Add(new StepViewModel() { Description = "Grab his wrist", Done = false });
+            technic8Steps.Add(new StepViewModel() { Description = "Use your elbow to push down his elbow", Done = false });
+            technic8Steps.Add(new StepViewModel() { Description = "Bring your right hand in a circle twisting your body", Done = false });
+            technic8Steps.Add(new StepViewModel() { Description = "Use your elbow to strike in a face area", Done = false });
+
+            this.Items.Add(new TechniqueViewModel()
+            {
+                Id = 8,
+                Step = technic8Steps,
+                Name = "Choke Escape",
+                Description = "Escaping from a choke",
+                VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
+                ImageLink = new Uri("http://goo.gl/zDsV3"),
+                Thumb = new Uri("http://img.youtube.com/vi/SZO9iX1vRsM/0.jpg"),
+                percentageDone = 0
+            });*/
 
 
             //Safety tips
