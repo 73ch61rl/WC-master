@@ -88,7 +88,7 @@ namespace WChallenge
 
         public async void LoadData()
         {
-            //1 technic - nose punch
+            //1 technic - face punch
             this.Items.Add(new TechniqueViewModel()
             {
                 Id = 1,
@@ -100,7 +100,7 @@ namespace WChallenge
                             },
                 Name = "Face punch",
                 Description = "Learn how to strike to a nose or other face area.",
-                VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
+                VideoLink = new Uri("http://youtu.be/GcOXu1V7Gp0"),
                 ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
                 Thumb = new Uri("/Assets/Techniques/face_punch.jpg", UriKind.Relative),
                 percentageDone = 0
@@ -121,7 +121,7 @@ namespace WChallenge
                 Step = technic2Steps,
                 Name = "Swing defence",
                 Description = "Defending if someone swings at you.",
-                VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
+                VideoLink = new Uri("http://www.youtube.com/watch?v=JyYW3LhgU9o&feature=youtu.be"),
                 ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
                 Thumb = new Uri("/Assets/Techniques/swing.jpg", UriKind.Relative),
                 percentageDone = 0
