@@ -111,8 +111,7 @@
                     {
                         _percentageDone = value;
                         NotifyPropertyChanged("PercentageDone");
-                        onPropertyChanged(this, "PercentageDone");
-                  
+                        onPropertyChanged(this, "PercentageDone"); 
                     }
                 }
             }

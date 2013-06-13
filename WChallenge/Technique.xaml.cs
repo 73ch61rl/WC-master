@@ -64,12 +64,16 @@ namespace WChallenge
 
         private void BtAdd_Click(object sender, RoutedEventArgs e)
         {
-            String technicName = tbTechnicName.Text.ToString();
-            TechniqueViewModel result = Items.Where(X => X.Name == technicName).FirstOrDefault();
-            WebBrowserTask webBrowserTask = new WebBrowserTask();
-            //webBrowserTask.Uri = new Uri(result.VideoLink.ToString(), UriKind.Absolute);
-            webBrowserTask.URL = "vnd.youtube:" + result.VideoLink.ToString().Substring(result.VideoLink.ToString().LastIndexOf("=") + 1);
-            webBrowserTask.Show();  
+            try
+            {
+                String technicName = tbTechnicName.Text.ToString();
+                TechniqueViewModel result = Items.Where(X => X.Name == technicName).FirstOrDefault();
+                WebBrowserTask webBrowserTask = new WebBrowserTask();
+                //webBrowserTask.Uri = new Uri(result.VideoLink.ToString(), UriKind.Absolute);
+                webBrowserTask.URL = "vnd.youtube:" + result.VideoLink.ToString().Substring(result.VideoLink.ToString().LastIndexOf("=") + 1);
+                webBrowserTask.Show();
+            }
+            catch { MessageBox.Show("You better uninstall the YouTube app and install it again.","Oops!",MessageBoxButton.OK); }
         } 
 
         
@@ -82,7 +86,7 @@ namespace WChallenge
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            SaveData(); 
+            SaveData(); MessageBox.Show(Convert.ToString(Items[0].percentageDone));
         }
 
 

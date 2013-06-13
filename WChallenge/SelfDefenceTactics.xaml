@@ -80,11 +80,13 @@
                 
                 <toolkit:MultiselectList.ItemTemplate>
                     <DataTemplate> 
-                        <StackPanel    Background="Orange" Orientation="Horizontal" Margin="0,0,0,20">
+                        <StackPanel    Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal" Margin="0,0,0,20">
                             <Image VerticalAlignment="Top" Height="100" Width="100"  Source="{Binding Thumb}" Margin="5,0,9,0"/>
                             
                             <StackPanel Width="311" Height="Auto" Orientation="Vertical">
-                                <TextBlock Foreground="Black" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <StackPanel Background="White" Width="450">
+                                    <TextBlock Foreground="Black" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                </StackPanel>
                                 <TextBlock x:Name="tbDesc"   Foreground="Black" Text="{Binding Description}" TextWrapping="Wrap" Margin="12,0,0,10"   Style="{StaticResource PhoneTextSubtleStyle}"/>
                             </StackPanel>
                         </StackPanel> 

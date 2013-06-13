@@ -102,7 +102,7 @@ namespace WChallenge
                 Description = "Learn how to strike to a nose or other face area.",
                 VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
                 ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
-                Thumb = new Uri("Assets/face_punch.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/face_punch.jpg", UriKind.Relative),
                 percentageDone = 0
             });
 
@@ -123,7 +123,7 @@ namespace WChallenge
                 Description = "Defending if someone swings at you.",
                 VideoLink = new Uri("https://www.youtube.com/watch?v=AwvfFWDtOZE"),
                 ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/swing.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/swing.jpg", UriKind.Relative),
                 percentageDone = 0
 
             });
@@ -144,7 +144,7 @@ namespace WChallenge
                 Description = "The basic stance you can meet in all martial arts.",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=kTSgnaG3mhg"),
                 ImageLink = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/horse_stance.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/horse_stance.jpg", UriKind.Relative),
                 percentageDone = 0
             });
 
@@ -164,7 +164,7 @@ namespace WChallenge
                 Description = "Practicing palm heel strike being in horse stance",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=SZO9iX1vRsM"),
                 ImageLink = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/palm_heel.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/palm_heel.jpg", UriKind.Relative),
                 percentageDone = 0,
                 Step = technic4Steps
             });
@@ -185,7 +185,7 @@ namespace WChallenge
                 Description = "Escaping from a choke",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=CD8Sex72UVw"),
                 ImageLink = new Uri("/Assets/choke_elbow.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/chokee_elbow.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/chokee_elbow.jpg", UriKind.Relative),
                 percentageDone = 0
             });
 
@@ -226,7 +226,7 @@ namespace WChallenge
                 Name = "Basic Kick",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=yKEy3tEhCog"),
                 ImageLink = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/basic_kick.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/basic_kick.jpg", UriKind.Relative),
                 percentageDone = 0
             });
 
@@ -246,9 +246,11 @@ namespace WChallenge
                 Description = "Using objects from your lady bag or shoes for defence in everyday life.",
                 VideoLink = new Uri("http://www.youtube.com/watch?v=IYjd0pTsqyw"),
                 ImageLink = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
-                Thumb = new Uri("/Assets/heels_key_defence.jpg", UriKind.Relative),
+                Thumb = new Uri("/Assets/Techniques/heels_key_defence.jpg", UriKind.Relative),
                 percentageDone = 0
             });
+
+
 
             //Safety tips
             //1

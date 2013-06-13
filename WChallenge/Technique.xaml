@@ -50,7 +50,6 @@
                 <TextBlock Foreground="Black" Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}"/>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock   Foreground="Black" x:Name="tbTechnicName" FontSize="35" Text="{Binding Name}" TextWrapping="Wrap" Margin="9,-7,0,0" FontWeight="ExtraBlack"  />
-                    <Button Content="!!ADD PROGRSS" Height="70" Foreground="Black"/>
                 </StackPanel>
                
             </StackPanel>
@@ -90,22 +89,15 @@
                        
                             <DataTemplate>
 
-                                <StackPanel Background="Silver" Margin="9,7,0,0" >
+                                <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="9,7,0,0" Width="450">
                                     <CheckBox Background="LightBlue" Foreground="Black" FontSize="20"   HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" >
                                         <CheckBox.Content>
                                             <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
               Style="{StaticResource PhoneTextNormalStyle}"
-              Foreground="{StaticResource PhoneAccentBrush}" />
+              Foreground="Black" />
                                         </CheckBox.Content>
                                     </CheckBox>
-
-                                    <!--<CheckBox IsChecked="{Binding Done}">
-                                        <CheckBox.Content>
-                                            <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
-              Style="{StaticResource PhoneTextNormalStyle}"
-              Foreground="{StaticResource PhoneAccentBrush}" />
-                                        </CheckBox.Content>
-                                    </CheckBox>-->
+ 
 
                                 </StackPanel>
                             </DataTemplate>
@@ -118,6 +110,11 @@
                  
 
             </Grid>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Center" Text="50" Foreground="Black" FontSize="40"/>
+            <TextBlock HorizontalAlignment="Center" Text="%" Foreground="Black" FontSize="40"/>
+            </StackPanel>
+            <ProgressBar Value="50"   BorderBrush="Black"   Margin="0,0,0,0"    />
         </StackPanel>
     </Grid>
 
