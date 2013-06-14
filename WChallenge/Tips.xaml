@@ -43,86 +43,88 @@
             <ImageBrush ImageSource="/Assets/Background.png">
             </ImageBrush>
         </Grid.Background>
-        
-        <!--Pivot Control-->
-        <controls:Pivot Title="KIAI!" Foreground="Black">
-            <!--Pivot item one-->
-            <controls:PivotItem Header="safety tips" FontWeight="ExtraBold">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-                     <ListBox ItemsSource="{Binding Tips}" x:Name="ListBoxTips"  >
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,20">-->
-                                <!--<TextBlock Text="{Binding TipName}" />-->
-                                <StackPanel    Background="White" Width="450" Height="Auto" Orientation="Vertical" Margin="0,0,0,20" Opacity="0.7">
-                                    <toolkit:ExpanderView Margin="8,8,8,8" 
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="KIAI!" FontWeight="ExtraBold" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="safety tips" FontWeight="ExtraBold" Foreground="Black" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding Tips}" x:Name="ListBoxTips"  >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <!--<StackPanel   Orientation="Horizontal" Margin="0,0,0,20">-->
+                            <!--<TextBlock Text="{Binding TipName}" />-->
+                            <StackPanel    Background="{StaticResource PhoneAccentBrush}" Width="450" Height="Auto" Orientation="Vertical" Margin="0,0,0,20">
+                                <toolkit:ExpanderView Margin="8,8,8,8" 
                                                 Header="{Binding}"
                                                 Expander="{Binding}"
                                                 ItemsSource="{Binding TipDescriptions}"
                                                 IsNonExpandable="{Binding IsNonExpandable}"
                                                 >
 
-                                        <!--Header-->
-                                        <!--Expander="{Binding}"-->
-                                        <toolkit:ExpanderView.HeaderTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding TipName}"
-                                                           FontWeight="ExtraBold"
+                                    <!--Header-->
+                                    <!--Expander="{Binding}"-->
+                                    <toolkit:ExpanderView.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding TipName}"
                                                Margin="8,8,8,8"
-                                               Foreground="{StaticResource PhoneAccentBrush}"
+                                               Foreground="{StaticResource PhoneForegroundBrush}"
                                                FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
                                                FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
-                                            </DataTemplate>
-                                        </toolkit:ExpanderView.HeaderTemplate>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.HeaderTemplate>
 
-                                        <toolkit:ExpanderView.ExpanderTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Grid.Row="0" Grid.Column="1"
+                                    <toolkit:ExpanderView.ExpanderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Grid.Row="0" Grid.Column="1"
                                                LineHeight="25" LineStackingStrategy="BlockLineHeight"
-                                               TextWrapping="Wrap" Text="Click for more..."
+                                               TextWrapping="Wrap" Text="Click..."
                                                    Margin="8,8,8,8"
-                                                Foreground="Black"/>
-                                            </DataTemplate>
-                                        </toolkit:ExpanderView.ExpanderTemplate>
+                                                Foreground="{StaticResource PhoneForegroundBrush}"/>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.ExpanderTemplate>
 
-                                        <toolkit:ExpanderView.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock toolkit:TiltEffect.IsTiltEnabled="True" Text="{Binding}"       
+                                    <toolkit:ExpanderView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock toolkit:TiltEffect.IsTiltEnabled="True" Text="{Binding}"       
                                                    Margin="0,8,0,-4"
-                                                   Foreground="Black"
+                                                   Foreground="{StaticResource PhoneForegroundBrush}"
                                                    FontSize="{StaticResource PhoneFontSizeLarge}" 
                                                    FontFamily="{StaticResource PhoneFontFamilySemiLight}"
                                                    TextWrapping="Wrap"/>
-                                            </DataTemplate>
-                                        </toolkit:ExpanderView.ItemTemplate>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.ItemTemplate>
 
 
-                                        <!-- The NonExpandableHeaderTemplate describes the non-expandable case.
+                                    <!-- The NonExpandableHeaderTemplate describes the non-expandable case.
                                  In the sample, it's the StackPanel for "Adriana Giorgi", 
                                  the subject, and first line of her email.-->
-                                        <toolkit:ExpanderView.NonExpandableHeaderTemplate>
-                                            <DataTemplate>
-                                                <StackPanel toolkit:TiltEffect.IsTiltEnabled="True">
-                                                    <TextBlock Text="Non-expandable"       
+                                    <toolkit:ExpanderView.NonExpandableHeaderTemplate>
+                                        <DataTemplate>
+                                            <StackPanel toolkit:TiltEffect.IsTiltEnabled="True">
+                                                <TextBlock Text="Non-expandable"       
                                                    Margin="0,8,0,-4"
                                                    Foreground="{StaticResource PhoneForegroundBrush}"
                                                    FontSize="{StaticResource PhoneFontSizeExtraLarge}" 
                                                    FontFamily="{StaticResource PhoneFontFamilySemiLight}"/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </toolkit:ExpanderView.NonExpandableHeaderTemplate>
-                                    </toolkit:ExpanderView>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox> 
-            </controls:PivotItem>
-
-            <!--Pivot item two-->
-            <controls:PivotItem Header="">
-                <Grid/>
-            </controls:PivotItem>
-        </controls:Pivot>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </toolkit:ExpanderView.NonExpandableHeaderTemplate>
+                                </toolkit:ExpanderView>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
     </Grid>
-    
+
 </phone:PhoneApplicationPage>

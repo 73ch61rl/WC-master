@@ -45,9 +45,9 @@
         </Grid.Background>
         <!--Pivot Control-->
 
-        <controls:Pivot Foreground="Black" Title="KIAI!">
+        <controls:Pivot Foreground="Black" FontWeight="ExtraBold" Title="KIAI!">
             <!--Pivot item one-->
-            <controls:PivotItem Header="fight styles">
+            <controls:PivotItem Header="fight styles" FontWeight="ExtraBold">
                 <ScrollViewer>
                     <ItemsControl ItemsSource="{Binding FightStyles}" x:Name="ListBoxFightStyles"  >
                         <ItemsControl.ItemTemplate>
@@ -140,7 +140,7 @@
             </controls:PivotItem>
 
             <!--Pivot item two-->
-            <controls:PivotItem Header="Courses ">
+            <controls:PivotItem Header="courses ">
                 <Microsoft_Phone_Controls_Maps:Map x:Name="map1" ZoomBarVisibility="Visible" CredentialsProvider="Ar9nEBzzSY5NqP_4ZNbb__k-Hj-bDeqHMna6WhNnqK19ZEUxe4a0zZqA8IlqpStc"   />
              </controls:PivotItem>
             
