@@ -59,7 +59,7 @@ namespace WChallenge
         {
 
             ObservableCollection<TechniqueViewModel> l = new ObservableCollection<TechniqueViewModel>();
-            MessageBox.Show(Convert.ToString(FightList.SelectedItems));
+          //  MessageBox.Show(Convert.ToString(FightList.SelectedItems));
 
             IList source = FightList.ItemsSource as IList;
 

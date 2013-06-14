@@ -25,10 +25,11 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls; 
 using System.Xml;
 using System.Xml.Serialization;
-using System.Xml.Linq;
+using System.Xml.Linq; 
 using System.Windows.Controls.Primitives;
 using System.ComponentModel;
 using System.Threading;
+
 
 namespace WChallenge
 {
@@ -38,27 +39,49 @@ namespace WChallenge
         {
             InitializeComponent(); 
 
-            WebClient twitter = new WebClient();
-            twitter.DownloadStringCompleted += new DownloadStringCompletedEventHandler(twitter_downloadstringCompleted);
-            twitter.DownloadStringAsync(new Uri("http://api.twitter.com/1/statuses/user_timeline.xml?screen_name=" + "defenseforwomen"));
+          //  WebClient twitter = new WebClient(); 
+         //   twitter.OpenReadCompleted += twitter_OpenReadCompleted;
+           // twitter.DownloadReadCompleted += new DownloadStringCompletedEventHandler(twitter_downloadstringCompleted);
+          //  twitter.OpenReadTaskAsync(new Uri("http://api.twitter.com/1/statuses/user_timeline.xml?screen_name=" + "carnivalbug")); 
              
         }
 
-        private void twitter_downloadstringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        private void twitter_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
         {
-            if (e.Error != null) return;
+            MessageBox.Show(Convert.ToString(e.Error));
 
-            XElement xmlTweets = XElement.Parse(e.Result); 
 
-            listboxtweets.ItemsSource = from tweet in xmlTweets.Descendants("status")
-                                        select new TwitterItem
-                                        {
-                                            ImageSource = tweet.Element("user").Element("profile_image_url").Value,
-                                            Message = tweet.Element("text").Value,
+            //XElement xmlTweets = XElement.Parse(Convert.ToString(e.Result));
+           
+            //listboxtweets.ItemsSource = from tweet in xmlTweets.Descendants("status")
+            //                            select new TwitterItem
+            //                            {
+            //                                ImageSource = tweet.Element("user").Element("profile_image_url").Value,
+            //                                Message = tweet.Element("text").Value,
 
-                                        };
-            listboxtweets.Visibility = Visibility.Visible;
-            progressBar1.Visibility = Visibility.Collapsed;
+            //                            };
+
+            //listboxtweets.Visibility = Visibility.Visible;
+            //progressBar1.Visibility = Visibility.Collapsed;
         }
+
+        //private void twitter_downloadstringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        //{
+        //   // if (e.Error != null) return;
+
+        //    MessageBox.Show(Convert.ToString(e.Error));
+        //    XElement xmlTweets = XElement.Parse(e.Result);
+
+        //    listboxtweets.ItemsSource = from tweet in xmlTweets.Descendants("status")
+        //                                select new TwitterItem
+        //                                {
+        //                                    ImageSource = tweet.Element("user").Element("profile_image_url").Value,
+        //                                    Message = tweet.Element("text").Value,
+
+        //                                };
+
+        //    listboxtweets.Visibility = Visibility.Visible;
+        //    //progressBar1.Visibility = Visibility.Collapsed;
+        //}
     }
 }

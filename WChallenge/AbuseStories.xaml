@@ -21,13 +21,51 @@
         </Grid.Background>
         <!--Pivot Control-->
       
-        <controls:Pivot Foreground="Black" Title="KIAI!" FontWeight="ExtraBold">
+        <controls:Pivot Foreground="Black" Title="KIAI!"  >
             <!--Pivot item one-->
             <controls:PivotItem Header="stories" >
-                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
-                    <ProgressBar IsIndeterminate="True" Visibility="Visible" x:Name="progressBar1" Height="100" Background="{StaticResource PhoneAccentBrush}"/>
-                    <ListBox   Margin="0,0,0,0"  ItemsSource="{Binding Items}"  Name="listboxtweets" Height="900">
-                    <ListBox.ItemTemplate>
+                     <!--<ProgressBar IsIndeterminate="True" Visibility="Visible" x:Name="progressBar1" Height="100" Background="{StaticResource PhoneAccentBrush}"/>-->
+                    <ListBox   Margin="0,0,0,0"  ItemsSource="{Binding Items}"  Name="listboxtweets" >
+
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="What You Need to Know About #DateRape Drugs http://ow.ly/fndEf  #rape #vaw #women #parents #WSDF #DefenseForWomen"  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="#DomesticViolence Safety Plan,Have A Plan Of Action! http://ow.ly/fndBr  #dv #vaw #women #DomesticAbuse #WSDF #DefenseForWomen"  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="#Stalking, Are You a Victim?Common #Stalker Characteristics http://ow.ly/fndhd  #vaw #selfdefense #WSDF #DefenseForWomen"  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="Please RT - Donate Used Cell Phones To #DomesticViolence Victims -To Help Visit http://ow.ly/fnd67  #dv #vaw #women #WSDF "  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="Free Women's #SelfDefense Videos;Learn To Protect Yourself #vaw #women #Rape http://ow.ly/fmElx  #WSDF #DefenseForWomen"  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+
+                        <StackPanel Margin="0,10,0,0" Background="{StaticResource PhoneAccentBrush}" Orientation="Horizontal">
+                            <Image Margin="5,0,0,0" Source="/Assets/wsdficontwitter.png"/>
+                            <TextBlock Foreground="Black" Text="10 Signs Your Daughter is Being Abused by Her Boyfriend http://ow.ly/76e6f  #dv #vaw #women #parents #WSDF #DefenseForWomen"  Margin="20,0,0,10" Width="300" TextWrapping="Wrap" />
+                        </StackPanel>
+
+
+                       
+                        
+                        <!--<ListBox.ItemTemplate>
                         <DataTemplate>
 
                             <StackPanel Orientation="Horizontal" Margin="10,0,0,30" Background="Gray" Opacity="50">
@@ -42,18 +80,43 @@
                             </StackPanel>
 
                         </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox></StackPanel>
+                    </ListBox.ItemTemplate>-->
+                 </ListBox> 
             </controls:PivotItem>
 
             <!--Pivot item two-->
             <controls:PivotItem Header="share yours">
-                <StackPanel>
-                    <ListBox Background="Transparent">
-                        <TextBlock x:Name="storiesTB" Height="400" Text="Amanda>">
-                         </TextBlock>
+                <StackPanel Width="500" >
+                    <ListBox Height="450" Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="storiesTB" Foreground="Black" Height="400" Text="Amanda>"/>
+                            <TextBlock   
+                                Foreground="{StaticResource PhoneAccentBrush}"
+                                Height="400"
+                                Text="My two kids and I went to the library on a Friday. My kids left looking for a specific book. I was reading the newspaper when a really old man came to the table and started talking to me. He seemed nice and was from the same culture, so I talked with him. After a while, he grabbed my hand and said inappropriate sexual comments. I stood up and yelled, 'This man is teasing me!' and everybody gathered, including my children. I told everyone and he left. I stayed in the library for hours after the man left." 
+                               TextWrapping="Wrap"
+                                Width="350"
+                                Margin="10,0,0,0"
+                                />         
+                       
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock  Foreground="Black" Height="400" Text="sarah>"/>
+                            <TextBlock   
+                                Foreground="{StaticResource PhoneAccentBrush}"
+                                Height="400"
+                              Text="A woman in my class told this story.  She had read it in the newspaper a few years ago.
+
+There was a woman riding the subway who felt a hand on her butt. She turned around and saw the culprit – who was wearing a guilty look on his face. She grabbed him by the ear, got off the train, and marched him up the stairs to the ticket taker who called the police."
+                                TextWrapping="Wrap"
+                                Width="350"
+                                Margin="10,0,0,0"
+                                />
+                        </StackPanel>
                     </ListBox>
-                <TextBox TextWrapping="Wrap" x:Name="typeTxtB" Height="200" > </TextBox>
+                  
+                    <TextBox TextWrapping="Wrap" Foreground="Gray" Text="name and story here.." x:Name="typeTxtB" Height="150" Margin="0,0,25,0" />
                 </StackPanel>
             </controls:PivotItem>
      

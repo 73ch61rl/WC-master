@@ -254,6 +254,7 @@
     <Content Include="Assets\Types\type_straight.png" />
     <Content Include="Assets\video_ph.png" />
     <Content Include="Assets\Background.png" />
+    <Content Include="Assets\wsdficontwitter.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />
     <Content Include="BarIcons\ApplicationBar.Select.png" />
     <Content Include="Notes.txt" />

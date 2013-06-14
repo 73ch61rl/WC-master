@@ -86,7 +86,8 @@ namespace WChallenge
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            SaveData(); MessageBox.Show(Convert.ToString(Items[0].percentageDone));
+            SaveData(); 
+            //MessageBox.Show(Convert.ToString(Items[0].percentageDone));
         }
 
 
