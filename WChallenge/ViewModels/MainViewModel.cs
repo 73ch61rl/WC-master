@@ -102,7 +102,7 @@ namespace WChallenge
                             },
                 Name = "Face punch",
                 Description = "Learn how to strike to a nose or other face area.",
-                VideoLink = new Uri("http://youtu.be/GcOXu1V7Gp0"),
+                VideoLink = new Uri("http://www.youtube.com/watch?v=GcOXu1V7Gp0"),
                 ImageLink = new Uri("Assets/face_punch.jpg", UriKind.Relative),
                 Thumb = new Uri("/Assets/Techniques/face_punch.jpg", UriKind.Relative),
                 percentageDone = 0
@@ -123,7 +123,7 @@ namespace WChallenge
                 Step = technic2Steps,
                 Name = "Swing defence",
                 Description = "Defending if someone swings at you.",
-                VideoLink = new Uri("http://www.youtube.com/watch?v=JyYW3LhgU9o&feature=youtu.be"),
+                VideoLink = new Uri("http://www.youtube.com/watch?v=JyYW3LhgU9o"),
                 ImageLink = new Uri("/Assets/swing.jpg", UriKind.Relative),
                 Thumb = new Uri("/Assets/Techniques/swing.jpg", UriKind.Relative),
                 percentageDone = 0
