@@ -148,8 +148,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrowsePage.xaml.cs">
-      <DependentUpon>BrowsePage.xaml</DependentUpon>
+    <Compile Include="BrowserPage.xaml.cs">
+      <DependentUpon>BrowserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="FightNCourses.xaml.cs">
       <DependentUpon>FightNCourses.xaml</DependentUpon>
@@ -190,7 +190,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrowsePage.xaml">
+    <Page Include="BrowserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
