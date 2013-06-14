@@ -16,5 +16,10 @@ namespace WChallenge
         {
             InitializeComponent();
         }
+
+        private void emergency_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            
+        }
     }
 }

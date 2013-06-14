@@ -74,11 +74,11 @@
                     <TextBlock Margin="20,10,0,0" FontSize="35" TextWrapping="Wrap"  Text="Legs are powerful ground-fighting weapons. To deliver crackling kicks, draw them back and drive them with the heel-not your itsy bitsy toes."  />
                 </StackPanel>-->
                 <StackPanel>
-                    <StackPanel Background="White">
+                    <StackPanel >
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}"  Text="Safety"   
-                               FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-100,0,0"/>
+                                FontSize="80" TextWrapping="Wrap" Margin="15,-100,0,0"/>
                     </StackPanel>
-                    <StackPanel Background="White">
+                    <StackPanel  >
                         <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Tips"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-40,0,0"/>
                     </StackPanel>
@@ -107,7 +107,7 @@
                         </ListBox.ItemTemplate>
 
                     </ListBox>
-
+                    <TextBlock Margin="12,30,0,0" Text="About" Tap="header_Tap" FontSize="40" />
                 </StackPanel>
 
             </controls:PanoramaItem>
@@ -116,7 +116,7 @@
             <controls:PanoramaItem Margin="0,-70,0,0" FontWeight="ExtraBlack"  Header=" " >
                 <Grid>
                     <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="My Tactics" 
-                               FontWeight="ExtraBold" FontSize="75" TextWrapping="Wrap" Margin="15,-100,0,0"/>
+                                 FontSize="75" TextWrapping="Wrap" Margin="15,-100,0,0"/>
                      
                     <ListBox    x:Name="TechnicListBox" Margin="0,0,0,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                         <ListBox.ItemTemplate>
@@ -124,7 +124,7 @@
                                 <toolkit:WrapPanel>
 
                                     <!--#E1DCE0-->
-                                    <StackPanel Width="350" Margin="30,20,0,10" Background="White" Height="150" Orientation="Horizontal">
+                                    <StackPanel Width="400" Margin="10,20,0,10" Background="White" Height="150" Orientation="Horizontal">
 
                                         <Image  Height="200" Width="100"  Source="{Binding Thumb}" Margin="10,0,0,0"  />
 
@@ -137,9 +137,10 @@
              Width="70"
               Height="150"
              Value="{Binding percentageDone, Mode=TwoWay,UpdateSourceTrigger=Default}" />
-                                        <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="0,0,0,0">
+                                        
+                                        <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="5,0,0,0">
 
-                                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap" FontSize="20" Foreground="Black" Margin="10,15,0,0" Width='150'  />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap" FontSize="25" Foreground="Black" Margin="10,15,0,0" Width='200'  />
                                         </StackPanel>
 
                                     </StackPanel>
