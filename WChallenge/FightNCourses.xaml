@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:Microsoft_Phone_Controls_Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
@@ -139,9 +140,10 @@
             </controls:PivotItem>
 
             <!--Pivot item two-->
-            <controls:PivotItem Header="Courses Around">
-                <Grid/>
-            </controls:PivotItem>
+            <controls:PivotItem Header="Courses ">
+                <Microsoft_Phone_Controls_Maps:Map x:Name="map1" ZoomBarVisibility="Visible" CredentialsProvider="Ar9nEBzzSY5NqP_4ZNbb__k-Hj-bDeqHMna6WhNnqK19ZEUxe4a0zZqA8IlqpStc"   />
+             </controls:PivotItem>
+            
         </controls:Pivot>
     </Grid>
 

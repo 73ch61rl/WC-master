@@ -58,7 +58,8 @@ TreeHelper treeHelper = new TreeHelper();
 {
  var currentSelectedListBoxItem = this.TechnicListBox.ItemContainerGenerator.ContainerFromIndex(i) as ListBoxItem;
 CharacterProgressControl.WP8.CProgressControl cp = treeHelper.FindDescendant<CharacterProgressControl.WP8.CProgressControl>(currentSelectedListBoxItem);
-} 
+cp.Value = 50;
+ } 
  
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
