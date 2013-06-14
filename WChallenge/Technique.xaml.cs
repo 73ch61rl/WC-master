@@ -36,8 +36,7 @@ namespace WChallenge
         public Technique()
         {
             InitializeComponent();
-            Items = App.ViewModel.Items;
-
+            Items = App.ViewModel.Items; 
         }
 
         public int techniqueId = 0;
@@ -58,7 +57,10 @@ namespace WChallenge
             else 
             {
                 this.DataContext = Items[techniqueId-1];
-            } 
+            }
+
+            pb.Value = App.ViewModel.Items[techniqueId - 1].percentageDone;
+            p.Text = Convert.ToString(pb.Value);
         } 
         
 
@@ -84,12 +86,30 @@ namespace WChallenge
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+         
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            SaveData(); 
-            //MessageBox.Show(Convert.ToString(Items[0].percentageDone));
+
+            //treeHelper for check boxes
+
+            SaveData(); int pd =0;
+            for (int i=0 ; i < Items[techniqueId - 1].Step.Count ;i++)
+            {
+                if (App.ViewModel.Items[techniqueId-1].Step[i].Done) pd++;  
+            }
+
+
+            int p = pd; int s = App.ViewModel.Items[techniqueId - 1].Step.Count; 
+            MessageBox.Show("pd " + Convert.ToString( p*100/s));
+
+                Items[techniqueId - 1].percentageDone =  p*100/s; 
+                App.ViewModel.Items[techniqueId - 1].percentageDone = p * 100 / s;
+                MessageBox.Show(Convert.ToString(App.ViewModel.Items[techniqueId - 1].percentageDone));
+
+            
+           }
+             
         }
-
-
+    
     }
-}

@@ -111,10 +111,10 @@
 
             </Grid>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <TextBlock HorizontalAlignment="Center" Text="50" Foreground="Black" FontSize="40"/>
+            <TextBlock x:Name="p" HorizontalAlignment="Center" Text="0" Foreground="Black" FontSize="40"/>
             <TextBlock HorizontalAlignment="Center" Text="%" Foreground="Black" FontSize="40"/>
             </StackPanel>
-            <ProgressBar Value="50"   BorderBrush="Black"   Margin="0,0,0,0"    />
+            <ProgressBar x:Name="pb" Value="{Binding PercentageDone, Mode=TwoWay}"   BorderBrush="Black"   Margin="0,0,0,0"    />
         </StackPanel>
     </Grid>
 

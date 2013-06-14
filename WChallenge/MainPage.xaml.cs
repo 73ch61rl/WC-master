@@ -31,6 +31,8 @@ namespace WChallenge
     public partial class MainPage : PhoneApplicationPage
     {
         // Constructor
+        //protected override void onnavigateto
+         
 
         public MainPage()
         {
@@ -49,17 +51,18 @@ namespace WChallenge
                 }
                 if (m == MessageBoxResult.Cancel)
                 {
-
+                    
                 } 
             }
 
-TreeHelper treeHelper = new TreeHelper();
- for (int i = 0; i < TechnicListBox.Items.Count(); i++)
-{
- var currentSelectedListBoxItem = this.TechnicListBox.ItemContainerGenerator.ContainerFromIndex(i) as ListBoxItem;
-CharacterProgressControl.WP8.CProgressControl cp = treeHelper.FindDescendant<CharacterProgressControl.WP8.CProgressControl>(currentSelectedListBoxItem);
-cp.Value = 50;
- } 
+
+             for (int i = 0; i < TechnicListBox.Items.Count; i++)
+             {
+                 TreeHelper treeHelper = new TreeHelper(); 
+                 var currentSelectedListBoxItem = this.TechnicListBox.ItemContainerGenerator.ContainerFromIndex(i) as ListBoxItem;
+                 CharacterProgressControl.WP8.CProgressControl cp = treeHelper.FindDescendant<CharacterProgressControl.WP8.CProgressControl>(currentSelectedListBoxItem);
+                 cp.Value = 50;
+             } 
  
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
@@ -76,9 +79,8 @@ cp.Value = 50;
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-
-
-            //MessageBox.Show("MAINPAGE= "+Convert.ToString(App.ViewModel.Items[0].percentageDone));
+            DataContext = App.ViewModel;
+            //MessageBox.Show("MAINPAGE= " + Convert.ToString(App.ViewModel.Items[0].percentageDone));
         }
 
 
@@ -91,8 +93,7 @@ cp.Value = 50;
             NavigationService.Navigate(new Uri("/Technique.xaml?TechniqueId=" + item.Id, UriKind.Relative));
 
             TechnicListBox.SelectedIndex = -1;
-
-
+             
         }
 
 
