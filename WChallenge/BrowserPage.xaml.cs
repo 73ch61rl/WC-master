@@ -35,18 +35,27 @@ namespace WChallenge
                 string encryptedLink = NavigationContext.QueryString["EncryptedLink"];
                 link = HttpUtility.HtmlDecode(encryptedLink);
                 //webBrowser.Navigate(new Uri(link, UriKind.Absolute));
-                Browse_Tap(null, null);
+                //Browse_Tap(null, null);
             }
         }
 
-        private void Browse_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            if (link != null && link != "")
-            {
-                //string encryptedLink = NavigationContext.QueryString["EncryptedLink"];
-                //link = HttpUtility.HtmlDecode(encryptedLink);
-                webBrowser.Navigate(new Uri(link, UriKind.Absolute));
+        //private void Browse_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        //{
+        //    if (link != null && link != "")
+        //    {
+        //        //string encryptedLink = NavigationContext.QueryString["EncryptedLink"];
+        //        //link = HttpUtility.HtmlDecode(encryptedLink);
+        //        webBrowser.Navigate(new Uri(link, UriKind.Absolute));
 
+        //    }
+        //}
+
+               private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //NavigationService.Navigate(new Uri("/FightNCourses.xaml", UriKind.Relative));
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
             }
         }
     }

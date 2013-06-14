@@ -26,13 +26,20 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="12,17,0,28">
-            <StackPanel Orientation="Vertical" Width = "500">
-                <TextBlock Text="KIAI!" Style="{StaticResource PhoneTextNormalStyle}"/>
-                <TextBlock Tap="Browse_Tap" Text="Browse" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Width = "220">
-                <Image Source="/Assets/ApplicationIcon.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,0,115,0" >
+                    <TextBlock Text="KIAI!" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <TextBlock Foreground="Black" Text="browse" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Width="100">
+                    <Image Source="/Assets/ApplicationIcon.png" HorizontalAlignment="Stretch" Tap="Image_Tap"  VerticalAlignment="Stretch" Margin="0,0,0,0" Height="104" />
+                    <TextBlock Text="back to KIAI!" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground ="{StaticResource PhoneAccentBrush}" Margin="0,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                </StackPanel>
+            </Grid>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
