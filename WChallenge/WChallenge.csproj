@@ -236,6 +236,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\gear.png" />
+    <Content Include="Assets\tile_punch.jpg" />
     <Content Include="Assets\Techniques\basic_kick.jpg" />
     <Content Include="Assets\Techniques\choke_elbow.jpg" />
     <Content Include="Assets\Techniques\choke_hammer.jpg" />
@@ -254,7 +255,6 @@
     <Content Include="Assets\Background.png" />
     <Content Include="BarIcons\ApplicationBar.Check.png" />
     <Content Include="BarIcons\ApplicationBar.Select.png" />
-    <Content Include="Assets\tile_punch.jpg" />
     <Content Include="Notes.txt" />
     <Content Include="Assets\PanoramaBackground.jpg" />
     <Content Include="README_FIRST.txt" />

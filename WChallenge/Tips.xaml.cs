@@ -1,5 +1,5 @@
 ﻿/***************************************************************************
- * Class:       Technique.xaml.cs
+ * Class:       Tips.xaml.cs
  * Made by:     Jalen Ins team (Maimuna Syed, Olga Shakurova, Irina Smirnova)
  * Country:     Finland
  * Year:        2013
@@ -28,7 +28,7 @@ namespace WChallenge
 {
     public partial class Tips : PhoneApplicationPage
     {
-       private TipViewModel selectedTip = null;
+        private TipViewModel selectedTip = null;
         public Tips()
         {
             InitializeComponent();
