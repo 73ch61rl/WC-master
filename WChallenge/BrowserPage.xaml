@@ -32,13 +32,13 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,0,115,0" >
-                    <TextBlock Text="KIAI!" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}"/>
-                    <TextBlock Foreground="Black" Text="browse" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                    <TextBlock Text="KIAI!" FontWeight="ExtraBold" Foreground="Black" Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <TextBlock Foreground="Black" FontWeight="ExtraBold" Text="browse" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Width="100">
+                <!--<StackPanel Orientation="Vertical" Grid.Column="1" Width="100">
                     <Image Source="/Assets/ApplicationIcon.png" HorizontalAlignment="Stretch" Tap="Image_Tap"  VerticalAlignment="Stretch" Margin="0,0,0,0" Height="104" />
                     <TextBlock Text="back to KIAI!" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground ="{StaticResource PhoneAccentBrush}" Margin="0,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-                </StackPanel>
+                </StackPanel>-->
 
             </Grid>
         </StackPanel>
