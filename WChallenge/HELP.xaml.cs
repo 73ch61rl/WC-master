@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+
 
 namespace WChallenge
 {
@@ -21,5 +23,33 @@ namespace WChallenge
         {
             
         }
+
+
+        private void WomenWelfareNrTB_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            TextBlock number = (TextBlock)sender;
+            String numberString = number.Text;
+            PhoneCallTask phoneCallTask = new PhoneCallTask();
+
+            phoneCallTask.PhoneNumber = numberString;
+            //phoneCallTask.DisplayName = "Gage";
+
+            phoneCallTask.Show();
+
+        }
+
+        private void PoliceNrTB_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            TextBlock number = (TextBlock)sender;
+            String numberString = number.Text;
+            PhoneCallTask phoneCallTask = new PhoneCallTask();
+
+            phoneCallTask.PhoneNumber = numberString;
+            //phoneCallTask.DisplayName = "Gage";
+
+            phoneCallTask.Show();
+        }
+
+
     }
 }

@@ -37,17 +37,60 @@
             <StackPanel>
 
                 <TextBlock x:Name="WomenWelfareTB" Text="WomenWelfare" Foreground="Black" FontSize="30"/>
-                <TextBlock x:Name="WomenWelfareNrTB" Text="{Binding Path=AppResources.IMPerNrTB, Source={StaticResource LocalizedStrings}}" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
+                <Button Foreground="Black" BorderBrush="Transparent" Margin="0,0,0,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock x:Name="WomenWelfareNrTB" Tap="WomenWelfareNrTB_Tap" VerticalAlignment="Center" Text="{Binding Path=AppResources.IMPerNrTB, Source={StaticResource LocalizedStrings}}" Margin="0,0,10,0" Foreground="Black" FontSize="30" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <StackPanel >
+                                <Image Source="/Assets/phone.jpg" Width="46" Height="42" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.59,1.218" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+                <TextBlock x:Name="PoliceTB" Text="Police" Foreground="Black" FontSize="30"/>
+                <Button Foreground="Black" BorderBrush="Transparent" Margin="0,0,0,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock x:Name="PoliceNrTB" Tap="WomenWelfareNrTB_Tap" Text="{Binding Path=AppResources.PoliceNrTB, Source={StaticResource LocalizedStrings}}"  VerticalAlignment="Center"  Margin="0,0,10,0" Foreground="Black" FontSize="30" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <StackPanel >
+                                <Image Source="/Assets/phone.jpg" Width="46" Height="42" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.59,1.218" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+                <TextBlock x:Name="IMPerTB" Text="Emergency Contact" Foreground="Black" FontSize="30"/>
+                <Button Foreground="Black" BorderBrush="Transparent" Margin="0,0,0,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock x:Name="IMPerNrTB" Text="{Binding Path=AppResources.WomenWelfareNrTB, Source={StaticResource LocalizedStrings}}" Tap="WomenWelfareNrTB_Tap" VerticalAlignment="Center"  Margin="0,0,10,0" Foreground="Black" FontSize="30" TextWrapping="Wrap" />
+                            </StackPanel>
+                            <StackPanel >
+                                <Image Source="/Assets/phone.jpg" Width="46" Height="42" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.59,1.218" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
 
 
 
-                <TextBlock x:Name="PoliceTB" Text="Police" Foreground="Black" FontSize="30" Margin="0,20,0,0" />
-                <TextBlock x:Name="PoliceNrTB" Text="{Binding Path=AppResources.PoliceNrTB, Source={StaticResource LocalizedStrings}}" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
 
-                <StackPanel x:Name="emergency" Tap="emergency_Tap" Margin="0,20,0,0" >
+                <!--<TextBlock x:Name="PoliceTB" Text="Police" Foreground="Black" FontSize="30" Margin="0,20,0,0" />
+                <TextBlock x:Name="PoliceNrTB" Text="{Binding Path=AppResources.PoliceNrTB, Source={StaticResource LocalizedStrings}}" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>-->
+
+                <!--<StackPanel x:Name="emergency" Tap="emergency_Tap" Margin="0,20,0,0" >
                     <TextBlock x:Name="IMPerTB" Text="Emergency Contact" Foreground="Black" FontSize="30" />
                     <TextBlock x:Name="IMPerNrTB" Text="{Binding Path=AppResources.WomenWelfareNrTB, Source={StaticResource LocalizedStrings}}" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
-                </StackPanel>
+                </StackPanel>-->
             </StackPanel>
         </Grid>
     </Grid>

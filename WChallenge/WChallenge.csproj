@@ -249,6 +249,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\gear.png" />
+    <Content Include="Assets\phone.jpg" />
     <Content Include="Assets\tile_punch.jpg" />
     <Content Include="Assets\Techniques\basic_kick.jpg" />
     <Content Include="Assets\Techniques\choke_elbow.jpg" />
