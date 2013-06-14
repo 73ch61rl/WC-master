@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{41216a5c-3b93-439c-971f-32cc2b552131}" Title="KIAI!" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Jalen Ins" Description="Sample description" Publisher="Jalen Ins" BitsPerPixel="32" PublisherID="{c73be0f7-2984-4e56-9635-f0843e6db9d3}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">100x100.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -28,10 +28,10 @@
     <Tokens>
       <PrimaryToken TokenID="WChallengeToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">Assets\tile_app.png</SmallImageURI>
+          <SmallImageURI IsResource="false" IsRelative="true">210x210.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">Assets\tile_app.png</BackgroundImageURI>
-          <Title>WChallenge</Title>
+          <BackgroundImageURI IsResource="false" IsRelative="true">210x210.png</BackgroundImageURI>
+          <Title>KIAI!</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

@@ -115,18 +115,18 @@
 
             <controls:PanoramaItem Margin="0,-70,0,0" FontWeight="ExtraBlack"  Header=" " >
                 <Grid>
-                    <!--<TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="My Tactics" 
-                                 FontSize="75" TextWrapping="Wrap" Margin="15,-100,0,0"/>-->
-                    <StackPanel >
+                    <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="My Tactics" 
+                                 FontSize="75" TextWrapping="Wrap" Margin="15,-100,0,0"/>
+                    <!--<StackPanel >
                         <TextBlock Foreground="{StaticResource PhoneAccentBrush}"  Text="My"   
                                 FontWeight="Normal" FontSize="80" TextWrapping="Wrap" Margin="15,-100,0,0"/>
                     </StackPanel>
                     <StackPanel  >
                         <TextBlock Foreground="{StaticResource PhoneAccentBrush}" Text="Tactics"   
                                FontWeight="ExtraBold" FontSize="100" TextWrapping="Wrap" Margin="15,-40,0,0"/>
-                    </StackPanel>
-
-                    <ListBox    x:Name="TechnicListBox" Margin="0,0,0,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
+                    </StackPanel>-->
+                 
+                  <ListBox    x:Name="TechnicListBox" Margin="0,0,0,0" SelectionChanged="ListBox_SelectionChanged_1"  ItemsSource="{Binding Items, Mode=TwoWay}" Height="auto">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <toolkit:WrapPanel>
