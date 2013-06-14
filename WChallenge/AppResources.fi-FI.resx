@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="IMPerNrTB" xml:space="preserve">
-    <value>0465552133</value>
+    <value>+358 465552133</value>
   </data>
   <data name="PoliceNrTB" xml:space="preserve">
-    <value>0465552132</value>
+    <value>+358 465552132</value>
   </data>
   <data name="WomenWelfareNrTB" xml:space="preserve">
-    <value>0465552131</value>
+    <value>+358 465552131</value>
   </data>
 </root>
