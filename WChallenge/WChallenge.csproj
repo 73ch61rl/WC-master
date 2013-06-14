@@ -19,6 +19,7 @@
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
+      fi-FI;es-MX;ru-RU;hi-IN;
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -149,6 +150,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppResources.Designer.cs" />
+    <Compile Include="AppResources.fi-FI.Designer.cs" />
+    <Compile Include="AppResources.ru-RU.Designer.cs" />
     <Compile Include="BrowserPage.xaml.cs">
       <DependentUpon>BrowserPage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +162,7 @@
     <Compile Include="HELP.xaml.cs">
       <DependentUpon>HELP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LocalizedStrings.cs" />
     <Compile Include="RandomTipConverter.cs" />
     <Compile Include="SelfDefenceTactics.xaml.cs">
       <DependentUpon>SelfDefenceTactics.xaml</DependentUpon>
@@ -269,6 +274,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SampleData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppResources.es-MX.resx" />
+    <EmbeddedResource Include="AppResources.fi-FI.resx" />
+    <EmbeddedResource Include="AppResources.hi-IN.resx" />
+    <EmbeddedResource Include="AppResources.resx" />
+    <EmbeddedResource Include="AppResources.ru-RU.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
