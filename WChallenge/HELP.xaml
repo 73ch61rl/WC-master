@@ -33,7 +33,23 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="20,0,12,0"> 
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="20,0,12,0">
+            <StackPanel>
+
+                <TextBlock x:Name="WomenWelfareTB" Text="WomenWelfare" Foreground="Black" FontSize="30"/>
+                <TextBlock x:Name="WomenWelfareNrTB" Text="08003434208" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
+
+
+
+                <TextBlock x:Name="PoliceTB" Text="Police" Foreground="Black" FontSize="30" Margin="0,20,0,0" />
+                <TextBlock x:Name="PoliceNrTB" Text="080034343208" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
+
+                <StackPanel x:Name="emergency" Tap="emergency_Tap" Margin="0,20,0,0" >
+                    <TextBlock x:Name="IMPerTB" Text="Emergency Contact" Foreground="Black" FontSize="30" />
+                    <TextBlock x:Name="IMPerNrTB" Text="04453345345" Margin="50,0,0,0" Foreground="Black" FontSize="30"/>
+                </StackPanel>
+
+            </StackPanel>
         </Grid>
     </Grid>
 
