@@ -104,6 +104,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AmCharts.Windows.QuickCharts.WP">
+      <HintPath>D:\CompletedProjects\graph\AmCharts.Windows.QuickCharts.WP.dll</HintPath>
+    </Reference>
     <Reference Include="CharacterProgressControl">
       <HintPath>..\packages\CharacterProgressControl.1.0.0\lib\wp8\CharacterProgressControl.dll</HintPath>
     </Reference>
@@ -162,6 +165,7 @@
     <Compile Include="HELP.xaml.cs">
       <DependentUpon>HELP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItemData.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="RandomTipConverter.cs" />
     <Compile Include="SelfDefenceTactics.xaml.cs">

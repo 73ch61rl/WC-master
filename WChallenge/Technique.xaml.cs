@@ -101,11 +101,11 @@ namespace WChallenge
 
 
             int p = pd; int s = App.ViewModel.Items[techniqueId - 1].Step.Count; 
-            MessageBox.Show("pd " + Convert.ToString( p*100/s));
+           // MessageBox.Show("pd " + Convert.ToString( p*100/s));
 
                 Items[techniqueId - 1].percentageDone =  p*100/s; 
                 App.ViewModel.Items[techniqueId - 1].percentageDone = p * 100 / s;
-                MessageBox.Show(Convert.ToString(App.ViewModel.Items[techniqueId - 1].percentageDone));
+            //    MessageBox.Show(Convert.ToString(App.ViewModel.Items[techniqueId - 1].percentageDone));
 
             
            }

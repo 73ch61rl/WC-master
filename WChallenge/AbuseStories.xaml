@@ -7,8 +7,11 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+     xmlns:amq="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
+
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
@@ -81,6 +84,7 @@
 
                         </DataTemplate>
                     </ListBox.ItemTemplate>-->
+                        
                  </ListBox> 
             </controls:PivotItem>
 
@@ -127,6 +131,24 @@ There was a woman riding the subway who felt a hand on her butt. She turned arou
                         <TextBlock Text="tags: "/>
                         <TextBox Text="#female #rape #abuse" Foreground="Gray"/>
                     </StackPanel>
+                    <Grid x:Name="ContentMPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+                        <amq:SerialChart x:Name="Chart"
+                                                      Margin="0,64,0,-483"
+                                                      AxisForeground="{StaticResource PhoneForegroundBrush}"
+                                                      CategoryValueMemberPath="Weeks"
+                                                      FontSize="21.333"
+                                                      Foreground="{StaticResource PhoneForegroundBrush}"
+                                                      GridStroke="{StaticResource PhoneTextBoxReadOnlyBrush}"
+                                                      LegendVisibility="Collapsed"
+                                                      PlotAreaBackground="{x:Null}">
+                            <amq:SerialChart.Graphs>
+                                <amq:LineGraph Brush="{StaticResource PhoneAccentBrush}" ValueMemberPath="Weight" />
+                            </amq:SerialChart.Graphs>
+                        </amq:SerialChart>
+                    </Grid>
+
                 </StackPanel>
             </controls:PivotItem>
             

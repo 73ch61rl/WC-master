@@ -35,9 +35,26 @@ namespace WChallenge
 {
     public partial class AbuseStories : PhoneApplicationPage
     {
+        List<Weight_per_Week> WW;
         public AbuseStories()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            WW = new List<Weight_per_Week>();
+
+            WW.Add(new Weight_per_Week { Weeks = "2001", Weight = 84 });
+            WW.Add(new Weight_per_Week { Weeks = "2002", Weight = 75 });
+            WW.Add(new Weight_per_Week { Weeks = "2003", Weight = 79 });
+            WW.Add(new Weight_per_Week { Weeks = "2004", Weight = 78 });
+            WW.Add(new Weight_per_Week { Weeks = "2005", Weight = 84 });
+            WW.Add(new Weight_per_Week { Weeks = "2006", Weight = 98 });
+            WW.Add(new Weight_per_Week { Weeks = "2007", Weight = 80 });
+            WW.Add(new Weight_per_Week { Weeks = "2008", Weight = 81 });
+            WW.Add(new Weight_per_Week { Weeks = "2009", Weight = 82 });
+            WW.Add(new Weight_per_Week { Weeks = "2010", Weight = 75 });
+            WW.Add(new Weight_per_Week { Weeks = "2011", Weight = 81 });
+            WW.Add(new Weight_per_Week { Weeks = "2012", Weight = 75 }); 
+
+            Chart.DataSource = WW;
 
           //  WebClient twitter = new WebClient(); 
          //   twitter.OpenReadCompleted += twitter_OpenReadCompleted;

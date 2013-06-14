@@ -90,7 +90,7 @@
                             <DataTemplate>
 
                                 <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="9,7,0,0" Width="450">
-                                    <CheckBox Background="LightBlue" Foreground="Black" FontSize="20"   HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" >
+                                    <CheckBox Background="{StaticResource PhoneAccentBrush}" Foreground="Black" FontSize="20"   HorizontalAlignment="Left" Name="chkStep" VerticalAlignment="Top" IsChecked="{Binding Done, Mode=TwoWay}" >
                                         <CheckBox.Content>
                                             <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="{Binding Description}"
               Style="{StaticResource PhoneTextNormalStyle}"
