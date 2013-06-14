@@ -259,8 +259,8 @@
     <Content Include="Notes.txt" />
     <Content Include="Assets\PanoramaBackground.jpg" />
     <Content Include="README_FIRST.txt" />
-    <Content Include="Assets\SplashScreenImage.jpg" />
     <Content Include="Assets\tile_app.png" />
+    <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
